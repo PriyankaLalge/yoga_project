@@ -16,14 +16,14 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="teams.php"><p>Team</p></a> 
+                                          <a href="employee.php"><p>Employee</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="add_team.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Team</a> 
+                                         <a href="add_employee.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
                                     </div>
                                 </div>
                             </div>
@@ -38,20 +38,20 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-4">
-                                                <h3 class="text-uppercase">Team Details</h3>
+                                                <h3 class="text-uppercase">Employee Details</h3>
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                     <form action="" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                    </h3>
-                                                </div>
+                                                <h3>
+                                                 <form action="" method="GET">
+                                                    <div class="input-group pull-right">
+                                                         <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                 </form>
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

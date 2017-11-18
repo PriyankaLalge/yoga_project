@@ -35,13 +35,13 @@
                             <div class="content">
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
+                                         <div class="icon-big icon-success text-center">
                                           <i class="fa fa-users" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a> <p>Team</p></a> 
+                                          <a> <p>Employee</p></a> 
                                         
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Team</a> 
+                                         <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
                                     </div>
                                 </div>
                             </div>

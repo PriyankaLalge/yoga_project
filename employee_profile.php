@@ -4,9 +4,9 @@
 
         <div class="content">
             <div class="container-fluid">
-              <div class="row">
-<!--
-                <div class="col-lg-3 col-sm-6">
+                
+                <div class="row">
+                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
                                 <div class="row">
@@ -17,21 +17,121 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="teams.php"><p>team</p></a> 
+                                          <a href="employee.php"><p>Employee</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="add_team.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Team</a> 
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                             <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Trainer</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Trainer Attendance</a> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
--->
-                  
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                           <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                        <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Employee</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Attendance</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                           <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                         <i class="fa fa-tasks" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Employee</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Daily Activity</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                 <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                       <i class="fa fa-money" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Employee</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Payment History</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="row">
                        <div class="col-lg-4 col-md-5">
                         <div class="card card-user">
                             <div class="image">
@@ -48,90 +148,8 @@
                                   </h4>
                                 </div>
                             </div>
-<!--
-                            <hr>
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col-md-3 col-md-offset-1">
-                                        <h5>Batch<br /><small>fdhfgj</small></h5>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h5>Timing<br /><small>fhyfg</small></h5>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h5>Year<br /><small>fghfg</small></h5>
-                                    </div>
-                                </div>
-                            </div>
--->
+
                         </div>
-<!--
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Fees Details</h4>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled team-members">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                Total Fees
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <b>fhyfgj</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                Discount Fees
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <b>fhfgj</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                Final Fees
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <b>fghfgj</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                Payment Received
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <b>fhfgj</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                Balance Amount
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <b>fgjhghj</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                  
-                                </ul>
-                            </div>
-                        </div>
--->
                     </div>
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
