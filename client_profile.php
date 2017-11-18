@@ -1,5 +1,5 @@
 <?php require_once 'header.php'; ?>
-<?php $page=2;require_once 'sidebar.php'; ?>
+<?php $page=1;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
         <div class="content">
@@ -17,113 +17,87 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
+                                          <a href="clients.php"><p>Client</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
+                                         <a href="client_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Client Profile</a> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div> 
+                    
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                             <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                          <a href="trainer_attendance.php"><p>Trainer Attendance</p></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                         <a href="trainer_attendance.php"><i class="fa fa-plus" aria-hidden="true"></i> View Trainer Attendance</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                           <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-danger text-center">
-                                        <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                          <a href="employee_attendance.php"><p>Employee Attendance</p></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                         <a href="employee_attendance.php"><i class="fa fa-plus" aria-hidden="true"></i> View Employee Attendance</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                           <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                         <i class="fa fa-tasks" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                         <a href="daily_activity.php"><i class="fa fa-plus" aria-hidden="true"></i>Daily Activity</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                 <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content">
                                 <div class="row">
                                     <div class="col-xs-5">
                                         <div class="icon-big icon-info text-center">
-                                       <i class="fa fa-money" aria-hidden="true"></i>
+                                      <i class="fa fa-database" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
+                                          <a href="clients.php"><p>Client</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="employee_payment_history.php"><i class="fa fa-plus" aria-hidden="true"></i>Payment History</a> 
+                                         <a href="package_history.php"><i class="fa fa-plus" aria-hidden="true"></i>Package History</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                       <i class="fa fa-legal" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="clients.php"><p>Client</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="fitness_history.php"><i class="fa fa-plus" aria-hidden="true"></i>Fitness History</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                       <i class="fa fa-money" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="clients.php"><p>Client</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="client_payment_history.php"><i class="fa fa-plus" aria-hidden="true"></i>Payment History</a> 
                                     </div>
                                 </div>
                             </div>
@@ -131,6 +105,7 @@
                     </div>
                 </div>
                 
+               
               <div class="row">
                        <div class="col-lg-4 col-md-5">
                         <div class="card card-user">
@@ -154,7 +129,7 @@
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Employee Details</h4>
+                                <h4 class="title">Client Details</h4>
                             </div>
                             <div class="content">
                                 <ul class="list-unstyled team-members">
@@ -224,32 +199,100 @@
                                             </div>
                                         </div>
                                     </li>
+                                    <br>
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                Date of Joining:
+                                              Package Type:
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>21/45/3344</b>
+                                                <b>monthly</b>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                             Last Working Date:
+                                             Batch Name:
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>ghjhgk</b>
+                                                <b>zumba</b>
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                             Start Date:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>11/11/2017</b>
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                             End Date:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>11/11/2017</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>
+                                     <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                              Total fees:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>Rs 4999</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                             Discount:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>Rs 1242</b>
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                          Recieved:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>Rs 34643</b>
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                             Balance:
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b>Rs 4645</b>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-*"><br>
-                                                <center><a href="edit_employee_profile.php"><button class="btn btn-success">Edit Profile</button></a></center>
+                                                <center><a href="edit_client_profile.php"><button class="btn btn-success">Edit Profile</button></a></center>
                                             </div>
                                         </div>
                                     </li>

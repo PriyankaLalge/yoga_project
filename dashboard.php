@@ -1,5 +1,5 @@
 <?php require_once 'header.php'; ?>
-<?php require_once 'sidebar.php'; ?>
+<?php $page=0;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
         <div class="content">
@@ -16,7 +16,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a><p>Clients</p></a>  
+                                          <a href="clients.php"><p>Clients</p></a>  
                                             
                                         </div>
                                     </div>
@@ -24,7 +24,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                      <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Client</a>  
+                                      <a href="add_client.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Client</a>  
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a> <p>Employee</p></a> 
+                                          <a href="employee.php"> <p>Employee</p></a> 
                                         
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
+                                         <a href="add_employee.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
                                     </div>
                                 </div>
                             </div>

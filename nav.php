@@ -26,13 +26,28 @@
                                 <li><a href="#">Notification 4</a></li>
                                 <li><a href="#">Another notification</a></li>
                               </ul>
+                        </li> 
+                        
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="fa fa-user" aria-hidden="true"></i>
+									<p>Profile</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Username</a></li>
+                                <li><a href="#">Sign Out</a></li>
+                                
+                              </ul>
                         </li>
+<!--
 						<li>
                             <a href="#">
 								<i class="ti-settings"></i>
 								<p>Settings</p>
                             </a>
                         </li>
+-->
                     </ul>
 
                 </div>

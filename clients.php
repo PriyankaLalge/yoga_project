@@ -1,5 +1,5 @@
 <?php require_once 'header.php'; ?>
-<?php $page=2;require_once 'sidebar.php'; ?>
+<?php $page=1;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
         <div class="content">
@@ -10,20 +10,21 @@
                             <div class="content">
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                          <i class="fa fa-users" aria-hidden="true"></i>
+                                        <div class="icon-big icon-warning text-center">
+                                           <i class="fa fa-user-plus" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
+                                          <a href="clients.php"><p>Clients</p></a>  
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="add_employee.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
+                                      <a href="add_client.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Client</a>  
                                     </div>
                                 </div>
                             </div>
@@ -32,28 +33,29 @@
 <!--
                      <div class="col-lg-3 col-sm-6">
                         <div class="card">
-                            <div class="content" >
+                            <div class="content">
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        <div class="icon-big icon-danger text-center">
+                                        <div class="icon-big icon-success text-center">
                                           <i class="fa fa-user" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
+                                          <a href="clients.php"><p>Client</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
+                                         <a href="client_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Client Profile</a> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div> 
+                    
 -->
                 </div>
                 <div class="row">
@@ -64,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-4">
-                                                <h3 class="text-uppercase">Employee Details</h3>
+                                                <h3 class="text-uppercase">Client Details</h3>
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
@@ -88,19 +90,19 @@
                                                 <th style="font-weight:bold;">Sr No.</th>
                                                 <th style="font-weight:bold;">Name</th>
                                                 <th style="font-weight:bold;">Contact No.</th> 
-                                                <th style="font-weight:bold;">Email Id.</th> 
-                                                <th style="font-weight:bold;">Status.</th>
+                                                <th style="font-weight:bold;">Batch Name</th> 
+                                                <th style="font-weight:bold;">Payment</th>
                                                
                                             </tr>
                                         </thead>
                                         <tbody id="myTable">
                                             <tr>
                                                <td>1</td>
-                                                <td><a href="employee_profile.php">priyanka</a></td>
+                                                <td><a href="client_profile.php">priyanka</a></td>
                                                 <td>235346456</td>
-                                                <td>lalgepriyanka1995@gmail.com</td>
+                                                <td>b1</td>
                                                 <td>paid</td>
-                                                <td><a href="edit_employee_profile.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                                <td><a href="edit_client_profile.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table> 
@@ -108,6 +110,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
