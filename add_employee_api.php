@@ -7,25 +7,26 @@ line no 2-- //connect to database
  line no 35--  // if query is not connected to databse then execute next loop and print as                                             unsuccessfull
  line no 55--   // if Query is empty then print as no value fount
 */
-if(isset($_POST['e_name'])){
+if(isset($_POST['e_name'])  && isset($_POST['comment'])  && isset($_POST['Gender']) /*&& isset($_POST['submit'])*/ ){
     
         $e_name = $_POST['e_name'];
-        $e_surname = $_POST['e_surname'];
         $Gender = $_POST['Gender'];
         $DOB = $_POST['DOB'];
-        $Age = $_POST['Age'];
-        $Title = $_POST['Title'];
-        $Salary = $_POST['Salary'];
-        $Register_ID = $_POST['Register_ID'];
-        $address = $_POST['address'];
         $contact = $_POST['contact'];
+        $anniversary = $_POST['anniversary'];
         $Email = $_POST['Email'];
+        $date_joint = $_POST['date_joint'];
+        $emp_reg = $_POST['emp_reg'];
+        $date_reg = $_POST['date_reg'];
+        $id_doc = $_POST['id_doc'];
+        $address = $_POST['address'];
+        $comment = $_POST['comment'];
         $photo = $_POST['photo'];
-        $status = 'unpaid';
+       /* $status = 'unpaid';
         $id_name = $_POST['id_name'];
-        $id_no = $_POST['id_no'];
+        $id_no = $_POST['id_no'];*/
     
-   $sql = "INSERT INTO `employee` (`e_name`, `e_surname`, `Gender`, `DOB`, `Age`, `Title`, `Salary`, `Register_ID`, `address`, `contact`, `Email`, `photo`, `status`, `id_name`, `id_no`) VALUES ('$e_name', '$e_surname', '$Gender', '$DOB', '$Age', '$Title', '$Salary', '$Register_ID', '$address', '$contact', '$Email','$photo', '$status','$id_name', '$id_no')";
+   $sql = "INSERT INTO `employee` (`e_name`, `Gender`, `DOB`, `contact`, `anniversary`, `Email`,`date_joint`, `emp_reg`,`date_reg`,`id_doc`, `address`, `comment`, `photo`) VALUES ('$e_name', '$Gender', '$DOB', '$contact', '$anniversary', '$Email', '$date_joint', '$emp_reg', '$date_reg', '$id_doc', '$address','$comment', '$photo')";
     
     if ($conn->query($sql) === TRUE) {
         ?> 

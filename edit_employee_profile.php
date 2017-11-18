@@ -1,3 +1,20 @@
+<?php
+// Start the session
+session_start();
+if(!empty($_SESSION)){
+?>
+
+<?php 
+include 'config.php';
+$id = $_GET['e_ID'];
+$sql = "SELECT * FROM employee WHERE e_ID = '$id'";
+$result = $conn->query($sql);   
+$row = $result->fetch_assoc();
+    $name=$row['e_name'];
+ print_r($row);
+    
+  
+?>
 <?php require_once 'header.php'; ?>
 <?php require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
@@ -32,12 +49,13 @@
                     </div>
                 </div>
                 
+Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [contact] => 2341232314 [anniversary] => 2017-11-20 [Email] => asd@ad.df [date_joint] => 2017-11-04 [emp_reg] => sdf [date_reg] => 2017-11-04 [id_doc] => assets/empl_doc/ganesh12.pdf [address] => sdf [comment] => sdf [photo] => assets/empl_image/ganesh12.jpg )
 -->
                 <div class="row">
                        <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add Employee</h4>
+                                <h4 class="title">Edit Employee</h4>
                             </div>
                             <div class="content">
                                 <form>
@@ -45,13 +63,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="name" name="" value="">
+                                                <input type="text" class="form-control border-input"  name="e_name" value="<?php echo $row['e_name'] ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="Contact No." name="" value="">
+                                                <input type="text" class="form-control border-input" name="contact" value="<?php echo $row['contact'] ?>"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -59,18 +77,19 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address <span class="required" style="color:red;"> * </span></label>
-                                                <input type="email" class="form-control border-input" placeholder="Email" name="">
+                                                <label for="exampleInputEmail1">Email address </label>
+                                                <input type="email" class="form-control border-input" name="" value="<?php echo $row['e_name'] ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Gender <span class="required" style="color:red;"> * </span></label>
                                             <div>
-                                                <select  class="form-control student_admission border-input"  name="" required>
-                                                    <option value="">---------------Gender---------------</option>
-                                                    <option value="regularcourse">Female</option>
-                                                    <option value="crashcourse">Male</option>  
+                                                <select  class="form-control student_admission border-input"  name="Gender" required>
+                                                    <option ><?php echo $row['Gender'] ?></option>
+                                                    <option >---------------Gender---------------</option>
+                                                    <option name="Gender" value="male">Male</option>
+                                                    <option name="Gender" value="female">Female</option>  
                                                 </select>
                                             </div>
                                         </div>
@@ -81,13 +100,13 @@
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date of birth <span class="required" style="color:red;"> *   </span></label>
-                                            <input type="date" class="form-control border-input datepicker"      name="" value="" required>
+                                            <input type="date" class="form-control border-input datepicker" name="DOB" value="<?php echo $row['DOB'] ?>" required>
                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Anniversary<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <label>Anniversary</label>
+                                                <input type="date" class="form-control border-input datepicker"  name="anniversary" value="<?php echo $row['anniversary'] ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -96,13 +115,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Employee Id <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="" value="" name="">
+                                                <input type="text" class="form-control border-input" value="<?php echo $row['emp_reg'] ?>" name="e_ID" required>
                                             </div>
                                         </div>  
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of joining<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="date" class="form-control border-input datepicker"  name="DOB" value="<?php echo $row['DOB'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -110,13 +129,13 @@
                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of registration<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="date" class="form-control border-input datepicker"  name="date_reg" value="<?php echo $row['date_reg'] ?>" required>
                                             </div>
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>ID Doc<span class="required" style="color:red;"> * </span></label>
-                                                <input type="file" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="file" class="form-control border-input datepicker"  name="" value="<?php echo $row['id_doc'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -125,14 +144,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Address <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
+                                                <textarea rows="5" class="form-control border-input" value="<?php echo $row['address']; ?>">
                                                 </textarea>
                                             </div>
                                         </div> 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Comments <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
+                                                <label>Comments </label>
+                                                <textarea rows="5" class="form-control border-input" value="<?php echo $row['comment']; ?>">
                                                 </textarea>
                                             </div>
                                         </div>
@@ -152,6 +171,10 @@
      <?php require_once 'footer.php'; ?>
   <?php require_once 'script_include.php'; ?>
   
-
+  
+<?php
+}
+else  {header('Location: index.php');}// echo "<h1>No User Logged In</h1>";
+?>
     
     

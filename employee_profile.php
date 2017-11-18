@@ -1,3 +1,18 @@
+<?php
+// Start the session
+session_start();
+if(!empty($_SESSION)){
+?>
+
+<?php 
+include 'config.php';
+$id = $_GET['e_ID'];
+$sql = "SELECT * FROM employee WHERE e_ID = '$id'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+    $name=$row['e_name'];
+ 
+?>
 <?php require_once 'header.php'; ?>
 <?php require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
@@ -6,7 +21,7 @@
             <div class="container-fluid">
                 
                 <div class="row">
-                     <div class="col-lg-3 col-sm-6">
+                     <!--<div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
                                 <div class="row">
@@ -29,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div> -->
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                              <div class="content">
@@ -102,9 +117,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+               <!-- </div>
                 
-                <div class="row">
+                <div class="row">-->
                  <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content">
@@ -139,18 +154,19 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                    <img class="avatar border-white" src="assets/img/favicon.png">
+                                    <img class="avatar border-white" src="<?php echo $row['photo'];?>">
                                   
                                   <h4 class="title"><br>
-                                     <small>ID:46456</small><br>
-                                      <small>Priyanka</small><br>
-                                      <small>8976463835</small>
+                                     <a >ID : <?php echo $row['e_ID']; ?></a><br>
+                                      <a >name : <?php echo $row['e_name']; ?></a><br>
+                                     <a >Contact No: <?php echo $row['contact']; ?></a><br>
                                   </h4>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+ <!--           Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [contact] => 234 [anniversary] => 2017-11-20 [Email] => asd@ad.df [date_joint] => 2017-11-04 [emp_reg] => sdf [date_reg] => 2017-11-04 [id_doc] => assets/empl_doc/ganesh12.pdf [address] => sdf [comment] => sdf [photo] => assets/empl_image/ganesh12.jpg ) -->     
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
@@ -164,8 +180,8 @@
                                                 Email ID
                                                 <br>
                                             </div>
-                                            <div class="col-xs-9">
-                                                <b>pri@gmail.com</b>
+                                            <div class="col-xs-6">
+                                                <b><?php echo $row['Email']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -176,7 +192,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>Female</b>
+                                                <b><?php echo $row['Gender']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -187,7 +203,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>24/05/2000</b>
+                                                <b><?php echo $row['DOB']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -198,7 +214,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>24/05/2006</b>
+                                                <b><?php echo $row['anniversary']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -209,7 +225,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6">
-                                                <b>sdgdfh</b>
+                                                <b><?php echo $row['address']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -220,7 +236,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>ghjkhjk</b>
+                                                <b><?php echo $row['comment']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -231,7 +247,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>21/45/3344</b>
+                                                <b><?php echo $row['date_joint']; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -242,16 +258,31 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>ghjhgk</b>
+                                                <b><?php echo $row['date_reg']; ?></b>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                <!--    <li>
                                         <div class="row">
-                                            <div class="col-xs-*"><br>
-                                                <center><a href="edit_employee_profile.php"><button class="btn btn-success">Edit Profile</button></a></center>
+                                            <div class="col-xs-3">
+                                               ID Documents
+                                                <br>
+                                            </div>
+                                            
+                                            <div class="col-xs-6">
+                                                <b><?php echo $row['id_doc']; ?></b>
                                             </div>
                                         </div>
+                                    </li>-->
+                                    <li>
+                                        <form action="edit_employee_profile.php" method="get">
+                                        <div class="row">
+                                            <div class="col-xs-*"><br>
+                                                <input  type="hidden" name="e_ID" value="<?php echo $row['e_ID'];?>"  >
+                                                <center><a href="edit_employee_profile.php?e_ID<?php echo $row['e_ID'];?>"><button class="btn btn-success">Edit Profile</button></a></center>
+                                            </div>
+                                        </div>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -264,6 +295,9 @@
      <?php require_once 'footer.php'; ?>
   <?php require_once 'script_include.php'; ?>
   
-
+<?php
+}
+else  {header('Location: index.php');}// echo "<h1>No User Logged In</h1>";
+?>
     
     

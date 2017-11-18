@@ -73,27 +73,22 @@ if ($conn->query($sql2) === TRUE) {
 }
 
 
- 
-
-// sql to create table
-
 $sql3 = "CREATE TABLE employee (
 e_ID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 e_name VARCHAR(50) ,
-e_surname VARCHAR (50) ,
 Gender VARCHAR (50) ,
 DOB VARCHAR (50) ,
-Age VARCHAR (50) ,
-Title VARCHAR (50) ,
-Salary VARCHAR (50) ,
-Register_ID VARCHAR (50) ,
-address VARCHAR(100) ,
-contact VARCHAR(50) ,
-Email VARCHAR(50) ,
-photo VARCHAR(50) ,
-status VARCHAR(50),
-id_name VARCHAR(50) ,
-id_no VARCHAR(50) 
+contact VARCHAR (50) ,
+anniversary VARCHAR (50) ,
+Email VARCHAR (50) ,
+date_joint VARCHAR (50) ,
+emp_reg VARCHAR (50) ,
+date_reg VARCHAR(100) ,
+id_doc VARCHAR(50) ,
+address VARCHAR(50) ,
+comment VARCHAR(50) ,
+photo VARCHAR(50)
+ 
 )";
 
 if ($conn->query($sql3) === TRUE) {
