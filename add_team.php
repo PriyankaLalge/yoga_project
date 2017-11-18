@@ -2,6 +2,54 @@
 <?php require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
+<?php 
+$sql="SELECT * FROM employee ORDER BY e_ID DESC LIMIT 1";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$id=$row['e_ID'];
+$img=$id+1;                    
+//print_r($img);
+?>        
+        
+<?php 
+if(isset($_POST['submit'])){
+    if(isset($_POST['e_name']) && isset($_POST['e_surname']) /* && isset($_POST['Gender'])&& isset($_POST['DOB'])&& isset($_POST['Age']) &&isset($_POST['Title']) && isset($_POST['Salary']) && isset($_POST['Register_ID'])&& isset($_POST['address'])&& isset($_POST['contact'])&& isset($_POST['Email'])*/){
+$Name = $_POST['e_name'] . $img;
+$url = "assets/empl_image/$Name.jpg";
+    $data = array( 
+        'e_name' => $_POST['e_name'],
+        'e_surname' => $_POST['e_surname'],
+        'Gender' => $_POST['Gender'],
+        'DOB' => $_POST['DOB'],
+        'Age' => $_POST['Age'],
+        'Title' => $_POST['Title'],
+        'Salary' => $_POST['Salary'] ,
+        'Register_ID' => $_POST['Register_ID'],
+        'address' => $_POST['address'],
+        'contact' => $_POST['contact'],
+        'Email' => $_POST['Email'],
+        'id_name' => $_POST['id_name'],
+        'id_no' => $_POST['id_no'],
+        'photo' => $url
+        
+        );
+    # Create a connection
+    $url = 'http://yoga.classguru.in/add_employee_api.php';
+    $ch = curl_init($url);
+    # Form data string
+    $postString = http_build_query($data, '', '&');
+    # Setting our options
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    # Get the response
+    $response = curl_exec($ch);
+        print_r($response);
+    curl_close($ch);    
+    }
+}
+?>
+
         <div class="content">
             <div class="container-fluid">
               <div class="row">
@@ -43,13 +91,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="name" name="" value="">
+                                                <input type="text" class="form-control border-input" placeholder="name" name="" >
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="Contact No." name="" value="">
+                                                <input type="text" class="form-control border-input" placeholder="Contact No." name="">
                                             </div>
                                         </div>
                                     </div>
@@ -65,10 +113,10 @@
                                         <div class="form-group">
                                             <label>Gender <span class="required" style="color:red;"> * </span></label>
                                             <div>
-                                                <select  class="form-control student_admission border-input"  name="" required>
+                                                <select  class="form-control student_admission border-input"  name="gander" required>
                                                     <option value="">---------------Gender---------------</option>
-                                                    <option value="regularcourse">Female</option>
-                                                    <option value="crashcourse">Male</option>  
+                                                    <option name="gander" value="female">Female</option>
+                                                    <option name="gander" value="male">Male</option>  
                                                 </select>
                                             </div>
                                         </div>
@@ -79,13 +127,13 @@
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date of birth <span class="required" style="color:red;"> *   </span></label>
-                                            <input type="date" class="form-control border-input datepicker"      name="" value="" required>
+                                            <input type="date" class="form-control border-input datepicker"      name="" required>
                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Anniversary<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="date" class="form-control border-input datepicker"  name=""  required>
                                             </div>
                                         </div>
                                     </div>
@@ -94,13 +142,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Employee Id <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" placeholder="" value="" name="">
+                                                <input type="text" class="form-control border-input" placeholder=""  name="">
                                             </div>
                                         </div>  
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of joining<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="date" class="form-control border-input datepicker"  name=""  required>
                                             </div>
                                         </div>
                                     </div>
@@ -108,13 +156,24 @@
                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of registration<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="" value="" required>
+                                                <input type="date" class="form-control border-input datepicker"  name=""required>
                                             </div>
                                         </div>
-                                         <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
-                                                <label>ID Doc<span class="required" style="color:red;"> * </span></label>
-                                                <input type="file" class="form-control border-input datepicker"  name="" value="" required>
+                                        <?php 
+                                            if(isset($_POST['submit']))
+                                            { file_put_contents("assets/empl_image/$Name.jpg",file_get_contents($_FILES['img']['tmp_name']));
+                                            }
+                                        ?>
+                                            <label>Profile Image<span class="required" style="color:red;"> * </span></label>
+                                            <input type="file" class="form-control border-input datepicker"  name=""  accept="image/*" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>ID docs<span class="required" style="color:red;"> * </span></label>
+                                                <input type="file" class="form-control border-input datepicker"  name=""  required>
                                             </div>
                                         </div>
                                     </div>
@@ -123,14 +182,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Address <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
+                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" >
                                                 </textarea>
                                             </div>
                                         </div> 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Comments <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
+                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" >
                                                 </textarea>
                                             </div>
                                         </div>
