@@ -37,7 +37,7 @@
                        <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add team</h4>
+                                <h4 class="title">Add Employee</h4>
                             </div>
                             <div class="content">
                                 <form>

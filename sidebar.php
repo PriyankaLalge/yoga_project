@@ -31,9 +31,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="teams.php">
+                    <a href="employee.php">
                          <i class="fa fa-users" aria-hidden="true"></i>
-                        <p>Teams</p>
+                        <p>Employees</p>
                     </a>
                 </li>
                 <li>

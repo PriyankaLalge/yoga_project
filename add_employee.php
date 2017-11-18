@@ -16,14 +16,14 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a href="teams.php"><p>Team</p></a> 
+                                          <a href="employee.php"><p>Employee</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                         <a href="add_team.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Team</a> 
+                                         <a href="add_employee.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Employee</a> 
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                        <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add team</h4>
+                                <h4 class="title">Add Employee</h4>
                             </div>
                             <div class="content">
                                 <form>
@@ -93,7 +93,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Employee Id <span class="required" style="color:red;"> * </span></label>
+                                                <label>Employee ID <span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input" placeholder="" value="" name="">
                                             </div>
                                         </div>  
