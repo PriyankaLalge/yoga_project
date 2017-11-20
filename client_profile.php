@@ -117,11 +117,11 @@
                                 <div class="author">
                                     <img class="avatar border-white" src="assets/img/favicon.png">
                                   
-                                  <h4 class="title"><br>
-                                     <small>ID:46456</small><br>
-                                      <small>Priyanka</small><br>
-                                      <small>8976463835</small>
-                                  </h4>
+                                  <h5 class="title"><br>
+                                     ID:46456<br>
+                                      Priyanka<br>
+                                      8976463835
+                                  </h5>
                                 </div>
                             </div>
                         </div>
