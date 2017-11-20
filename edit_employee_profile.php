@@ -16,7 +16,7 @@ $row = $result->fetch_assoc();
   
 ?>
 <?php require_once 'header.php'; ?>
-<?php require_once 'sidebar.php'; ?>
+<?php $page=2;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
         <div class="content">
@@ -63,13 +63,15 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input"  name="e_name" value="<?php echo $row['e_name'] ?>" required>
+                                                <input type="text" class="form-control border-input surnameInput"  name="e_name" value="<?php echo $row['e_name'] ?>" required>
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" name="contact" value="<?php echo $row['contact'] ?>"  required>
+                                                <input type="text" class="form-control border-input phoneInput" name="contact" value="<?php echo $row['contact'] ?>"  required>
+
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +80,8 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address </label>
-                                                <input type="email" class="form-control border-input" name="" value="<?php echo $row['e_name'] ?>">
+                                                <input type="email" class="form-control border-input UserName_field" name="Email" value="<?php echo $row['Email'] ?>">
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -101,12 +104,13 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                         <div class="form-group">
                                             <label>Date of birth <span class="required" style="color:red;"> *   </span></label>
                                             <input type="date" class="form-control border-input datepicker" name="DOB" value="<?php echo $row['DOB'] ?>" required>
+
                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Anniversary</label>
-                                                <input type="date" class="form-control border-input datepicker"  name="anniversary" value="<?php echo $row['anniversary'] ?>" >
+                                                <input type="date" class="form-control border-input"  name="anniversary" value="<?php echo $row['anniversary'] ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -115,13 +119,14 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Employee Id <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input" value="<?php echo $row['emp_reg'] ?>" name="e_ID" required>
+                                                <input type="text" class="form-control border-input phoneInput" value="<?php echo $row['emp_reg'] ?>" name="e_ID" required>
+
                                             </div>
                                         </div>  
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of joining<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="DOB" value="<?php echo $row['DOB'] ?>" required>
+                                                <input type="date" class="form-control border-input "  name="DOB" value="<?php echo $row['DOB'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -129,13 +134,13 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Date of registration<span class="required" style="color:red;"> * </span></label>
-                                                <input type="date" class="form-control border-input datepicker"  name="date_reg" value="<?php echo $row['date_reg'] ?>" required>
+                                                <input type="date" class="form-control border-input "  name="date_reg" value="<?php echo $row['date_reg'] ?>" required>
                                             </div>
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>ID Doc<span class="required" style="color:red;"> * </span></label>
-                                                <input type="file" class="form-control border-input datepicker"  name="" value="<?php echo $row['id_doc'] ?>" required>
+                                                <input type="file" class="form-control border-input "  name="id_doc" value="<?php echo $row['id_doc'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -144,14 +149,14 @@ Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [co
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Address <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="5" class="form-control border-input" value="<?php echo $row['address']; ?>">
+                                                <textarea rows="2" class="form-control border-input UserName_field" value="<?php echo $row['address']; ?>">
                                                 </textarea>
                                             </div>
                                         </div> 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Comments </label>
-                                                <textarea rows="5" class="form-control border-input" value="<?php echo $row['comment']; ?>">
+                                                <textarea rows="2" class="form-control border-input UserName_field" value="<?php echo $row['comment']; ?>">
                                                 </textarea>
                                             </div>
                                         </div>

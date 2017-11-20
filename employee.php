@@ -15,7 +15,7 @@ $employee_view = $employe->employee_view;
 ?> 
 
 <?php require_once 'header.php'; ?>
-<?php require_once 'sidebar.php'; ?>
+<?php $page=2;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
     <div class="content">
@@ -44,6 +44,32 @@ $employee_view = $employe->employee_view;
                             </div>
                         </div>
                     </div>
+<!--
+                     <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content" >
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                          <i class="fa fa-user" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Employee</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+-->
                 </div>
             </div>
             <div class="row">

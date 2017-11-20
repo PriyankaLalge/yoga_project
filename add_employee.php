@@ -6,7 +6,7 @@ if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){
 /*user access contrl by session*/
 ?>
 <?php require_once 'header.php'; ?>
-<?php require_once 'sidebar.php'; ?>
+<?php $page=2;require_once 'sidebar.php'; ?>
 <?php require_once 'nav.php'; ?>
 
   <div class="content">
@@ -86,6 +86,32 @@ $url = "assets/empl_image/$Name.jpg";
                             </div>
                         </div>
                     </div>
+<!--
+                   <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content" >
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                          <i class="fa fa-users" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                          <a href="employee.php"><p>Employee</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+-->
                 </div>
             </div>
         </div>
@@ -101,22 +127,21 @@ $url = "assets/empl_image/$Name.jpg";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input" placeholder="name" name="e_name" >
+                                    <input type="text" class="form-control border-input surnameInput" placeholder="name" name="e_name" >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input" placeholder="Contact No." name="contact">
+                                    <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="contact">
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address <span class="required" style="color:red;"> * </span></label>
-                                    <input type="email" class="form-control border-input" placeholder="Email" name="Email">
+                                    <input type="email" class="form-control border-input UserName_field " placeholder="Email" name="Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -152,7 +177,7 @@ $url = "assets/empl_image/$Name.jpg";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Employee ID <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input" placeholder="" name="emp_reg">
+                                    <input type="text" class="form-control border-input phoneInput" placeholder="" name="emp_reg">
                                 </div>
                             </div>  
                              <div class="col-md-6">
@@ -202,14 +227,14 @@ $url = "assets/empl_image/$Name.jpg";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Address <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input" name="address"placeholder="your address" >
+                                    <textarea rows="5" class="form-control border-input UserName_field" name="address"placeholder="your address" >
                                     </textarea>
                                 </div>
                             </div> 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Comments <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input" name="comment" placeholder="Here can be your description" >
+                                    <textarea rows="5" class="form-control border-input UserName_field" name="comment" placeholder="Here can be your description" >
                                     </textarea>
                                 </div>
                             </div>
