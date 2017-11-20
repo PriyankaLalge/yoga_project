@@ -213,7 +213,8 @@ Active VARCHAR(50),
 Name_of_plan VARCHAR(50),
 Time_unit VARCHAR(50),
 batch VARCHAR(50),
-Description VARCHAR(100)
+Description VARCHAR(100),
+fee VARCHAR(100)
 
 )";
 
