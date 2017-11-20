@@ -17,6 +17,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             $password1 = $row['password'];
             if($username == $username1 && $password == $password1){
                 echo "<script>alert('Login Success Fully')</script>";
+                header("location: dashboard.php");
                 break;
             }
             else {
