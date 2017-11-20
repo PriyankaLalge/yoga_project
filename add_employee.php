@@ -1,8 +1,8 @@
 <?php
 // Start the session
-session_start();
+/*session_start();
 if(!empty($_SESSION)){
-if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){
+if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){*/
 /*user access contrl by session*/
 ?>
 <?php require_once 'header.php'; ?>
@@ -302,14 +302,14 @@ $url = "assets/empl_image/$Name.jpg";
     }  
 
 <?php
-} 
+/*} 
   else{  
 echo '<script language="javascript">';
 echo 'alert("Access denied");window.location = "employee.php" </script>';
   }
 }
 else 
-    header('Location: index.php');//echo "<h1>No User Logged In</h1>";
+    header('Location: index.php');*///echo "<h1>No User Logged In</h1>";
 ?>
 
     

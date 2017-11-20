@@ -1,7 +1,7 @@
 <?php
 // Start the session
-session_start();
-if(!empty($_SESSION)){
+/*session_start();
+if(!empty($_SESSION)){*/
 ?>
 
 <?php 
@@ -297,8 +297,8 @@ $row = $result->fetch_assoc();
   <?php require_once 'script_include.php'; ?>
   
 <?php
-}
-else  {header('Location: index.php');}// echo "<h1>No User Logged In</h1>";
+/*}
+else  {header('Location: index.php');}*/// echo "<h1>No User Logged In</h1>";
 ?>
     
     
