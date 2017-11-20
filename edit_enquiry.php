@@ -70,7 +70,7 @@
                              <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Add Enquiry</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Save</button></center>
                                 </div>
                             </div>
                             </div>

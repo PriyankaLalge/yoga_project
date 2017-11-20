@@ -73,7 +73,7 @@
                 </li>
                 <li <?php if($page==11) {echo "class='active'";} ?>>
                     <a href="enquiry.php">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                       <i class="fa fa-pencil-square" aria-hidden="true"></i>
                         <p>Enquiry</p>
                     </a>
                 </li>

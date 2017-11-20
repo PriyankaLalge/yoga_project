@@ -138,8 +138,9 @@ $client_view = $client->client_view;
                                                 <td>235346456</td>
                                                 <td>b1</td>
                                                 <td>paid</td>
-                                                <td><a href="edit_client_profile.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                                <td><a href="edit_client_profile.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                             </tr><?php }endforeach;?><?php endforeach;?>
+
                                         </tbody>
                                     </table> 
                                 </div>                          

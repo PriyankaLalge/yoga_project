@@ -131,7 +131,7 @@
                                                 <td>sdgdf</td> 
                                                 <td>dfgdh</td>
                                                 <td>dfgdfh</td>
-                                                <td><a href="edit_enquiry.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                                <td><a href="edit_enquiry.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table> 
