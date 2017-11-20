@@ -78,22 +78,26 @@
 //        });
 //    });
 //    
-//    $(".UserName_field").on({
-//  keydown: function(e) {
-//    if (this.value.length === 0 && e.which === 32)
-//     e.preventDefault();
-//  },
-//});
-//    
+    
     $(".UserName_field").on({
   keydown: function(e) {
-    if (e.which === 32)
-      return false;
+    if (this.value.length === 0 && e.which === 32)
+     e.preventDefault();
   },
-  change: function() {
-    this.value = this.value.replace(/\s/g, "");
-  }
 });
+   
+    
+    
+//    $(".UserName_field").on({
+//  keydown: function(e) {
+//    if (e.which === 32)
+//      return false;
+//  },
+//  change: function() {
+//    this.value = this.value.replace(/\s/g, "");
+//  }
+//});
+//   
     
 //    $('.UserName_field').keypress(function(key) {
 //

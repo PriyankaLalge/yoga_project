@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=3;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=3;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">
@@ -61,7 +62,7 @@
                 </div>
             </div>
        
-                <div class="row">
+                <div class="row card_style">
                        <div class="card">
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
@@ -106,6 +107,7 @@
                                                 <td>Monthly</td>
                                                 <td>9-6</td> 
                                                 <td>akshay</td>
+                                                 <td><a href="edit_batches.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table> 

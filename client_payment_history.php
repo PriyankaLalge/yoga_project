@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=1;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">
@@ -106,7 +107,7 @@
                 </div>
                 
                
-                <div class="row">
+                <div class="row card_style">
                        <div class="card">
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
