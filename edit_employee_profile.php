@@ -66,7 +66,7 @@ $row = $result->fetch_assoc();
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control border-input phoneInput" name="contact" value="<?php echo $row['contact'] ?>"  required>
+                                        <input type="text" maxlength="10" class="form-control border-input phoneInput" name="contact" value="<?php echo $row['contact'] ?>"  required>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ $row = $result->fetch_assoc();
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Employee Id <span class="required" style="color:red;"> * </span></label>
+                                        <label>Employee ID <span class="required" style="color:red;"> * </span></label>
                                         <input type="text" class="form-control border-input phoneInput" value="<?php echo $row['emp_reg'] ?>" name="emp_reg" required>
                                     </div>
                                 </div>  

@@ -135,7 +135,7 @@ $url = "assets/empl_image/$Name.jpg";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="contact">
+                                    <input type="text" maxlength="10" class="form-control border-input phoneInput" placeholder="Contact No." name="contact">
                                 </div>
                             </div>
                         </div>
@@ -240,14 +240,14 @@ $url = "assets/empl_image/$Name.jpg";
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Address <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input" name="address"placeholder="your address" >
+                                    <textarea rows="2" class="form-control border-input" name="address">
                                     </textarea>
                                 </div>
                             </div> 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Comments <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input" name="comment" placeholder="Here can be your description" >
+                                    <textarea rows="2" class="form-control border-input" name="comment">
                                     </textarea>
                                 </div>
                             </div>
