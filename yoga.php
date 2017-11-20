@@ -87,7 +87,8 @@ date_reg VARCHAR(100) ,
 id_doc VARCHAR(50) ,
 address VARCHAR(50) ,
 comment VARCHAR(50) ,
-photo VARCHAR(50)
+photo VARCHAR(50),
+status VARCHAR(50)
  
 )";
 

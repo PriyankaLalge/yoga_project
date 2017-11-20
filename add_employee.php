@@ -41,6 +41,7 @@ $url = "assets/empl_image/$Name.jpg";
             'date_joint' => $_POST['date_joint'] ,
             'emp_reg' => $_POST['emp_reg'],
             'date_reg' => $_POST['date_reg'],
+            'status' => $_POST['status'],
             'id_doc' => $doc_url,
             'address' => $_POST['address'],
             'comment' => $_POST['comment'],
@@ -188,11 +189,23 @@ $url = "assets/empl_image/$Name.jpg";
                             </div>
                         </div>
                         <div class="row">
-                           <div class="col-md-6">
+                           <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Date of registration<span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input datepicker"  name="date_reg"required>
                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Status <span class="required" style="color:red;"> * </span></label>
+                                <div>
+                                    <select  class="form-control student_admission border-input" name="status" required>
+                                        <option >status</option>
+                                        <option name="status" value="employee">Employee</option>
+                                        <option name="status" value="trainer">Trainer</option>  
+                                    </select>
+                                </div>
+                            </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">

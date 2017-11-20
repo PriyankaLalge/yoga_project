@@ -18,6 +18,7 @@ if(isset($_POST['e_name'])  && isset($_POST['comment'])  && isset($_POST['Gender
         $date_joint = $_POST['date_joint'];
         $emp_reg = $_POST['emp_reg'];
         $date_reg = $_POST['date_reg'];
+        $status = $_POST['status'];
         $id_doc = $_POST['id_doc'];
         $address = $_POST['address'];
         $comment = $_POST['comment'];
@@ -26,7 +27,7 @@ if(isset($_POST['e_name'])  && isset($_POST['comment'])  && isset($_POST['Gender
         $id_name = $_POST['id_name'];
         $id_no = $_POST['id_no'];*/
     
-   $sql = "INSERT INTO `employee` (`e_name`, `Gender`, `DOB`, `contact`, `anniversary`, `Email`,`date_joint`, `emp_reg`,`date_reg`,`id_doc`, `address`, `comment`, `photo`) VALUES ('$e_name', '$Gender', '$DOB', '$contact', '$anniversary', '$Email', '$date_joint', '$emp_reg', '$date_reg', '$id_doc', '$address','$comment', '$photo')";
+   $sql = "INSERT INTO `employee` (`e_name`, `Gender`, `DOB`, `contact`, `anniversary`, `Email`,`date_joint`, `emp_reg`,`date_reg`,`status`,`id_doc`, `address`, `comment`, `photo`) VALUES ('$e_name', '$Gender', '$DOB', '$contact', '$anniversary', '$Email', '$date_joint', '$emp_reg', '$date_reg', '$status', '$id_doc', '$address','$comment', '$photo')";
     
     if ($conn->query($sql) === TRUE) {
         ?> 
@@ -42,7 +43,7 @@ if(isset($_POST['e_name'])  && isset($_POST['comment'])  && isset($_POST['Gender
     }, 1000)
 </script>
     <?php
-        //echo "<script>alert('Client created successfully')</script>";
+        echo "<script>alert('Client created successfully')</script>";
     } else {
          
         ?> 

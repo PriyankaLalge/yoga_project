@@ -14,8 +14,8 @@ if(isset($_POST['e_ID']) ){
     if ($result->num_rows > 0) {
         // output data of each row
         $row = $result->fetch_assoc(); 
-        array_push($employee,array('e_ID'=>$row['e_ID'],'e_name'=>$row['e_name'],'e_surname'=>$row['e_surname'],'Gender'=>$row['Gender'],'DOB'=>$row['DOB'],'Age'=>$row['Age'],'Title'=>$row['Title'],'Salary'=>$row['Salary'],'Register_ID'=>$row['Register_ID'],'address'=>$row['address'],'Email'=>$row['Email'],'contact'=>$row['contact'],'status_payment'=>$row['status'],'id_name'=>$row['id_name'],'id_no'=>$row['id_no']));
-       
+        array_push($employee,array('e_ID'=>$row['e_ID'],'e_name'=>$row['e_name'],'Gender'=>$row['Gender'],'DOB'=>$row['DOB'],'contact'=>$row['contact'],'anniversary'=>$row['anniversary'],'Email'=>$row['Email'],'emp_reg'=>$row['emp_reg'],'date_reg'=>$row['date_reg'],'id_doc'=>$row['id_doc'],'comment'=>$row['comment'],'photo'=>$row['photo']));
+       //,'status_payment'=>$row['status'],'id_name'=>$row['id_name'],'id_no'=>$row['id_no']
         $employee_view = array('employee_view'=>$employee);
         echo json_encode($employee_view);
     } else {

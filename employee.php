@@ -117,7 +117,7 @@ $employee_view = $employe->employee_view;
                                             
                                             <td><?php echo $value->contact;?></td>
                                             <td><?php echo $value->Email;?></td>
-                                            <td><?php echo "Employee/trainer";//$value->e_name;?></td>
+                                            <td><?php echo $value->status;//$value->e_name;?></td>
                                             <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
                                         </tr><?php }endforeach;?>
                                     </tbody>
