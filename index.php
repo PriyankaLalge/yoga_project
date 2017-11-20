@@ -61,7 +61,7 @@ curl_close($ch);
             <div class="header" style="border:2px solid white; background:#4d1b62; border-radius:20px; padding: 10px">
                 <h4 class="title" style="color:white; font-weight:800" >Sign-In</h4>
             </div>
-            <form action="index_api.php" method="post">
+        <form action="index_api.php" method="post">
             <div class="content" padding-left="10px" >
                 <div class="row" >                        
                     <div class="col-md-12">
