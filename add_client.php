@@ -119,8 +119,9 @@ curl_close($ch);
 ?>
 
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=1;require_once 'nav.php'; ?>
 
 <div class="content">
     <div class="container-fluid">
@@ -238,7 +239,6 @@ curl_close($ch);
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                  <div class="col-md-6">
                                 <div class="form-group">
@@ -249,7 +249,7 @@ curl_close($ch);
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Address <span class="required" style="color:red;"> * </span></label>
-                                        <textarea rows="1" class="form-control border-input UserName_field" name="c_address" placeholder="Mention Your address here">
+                                        <textarea rows="1" class="form-control border-input" name="c_address" placeholder="Mention Your address here">
                                         </textarea>
                                     </div>
                                 </div> 
@@ -258,7 +258,7 @@ curl_close($ch);
                                   <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Comments<span class="required" style="color:red;"> * </span></label>
-                                        <textarea rows="1" class="form-control border-input UserName_field" name="Comments" placeholder="Mention Your Comments here" >
+                                        <textarea rows="1" class="form-control border-input" name="Comments" placeholder="Mention Your Comments here" >
                                         </textarea>
                                     </div>
                                 </div> 

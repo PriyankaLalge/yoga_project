@@ -58,7 +58,7 @@ curl_close($ch);
     </div>
     <div class="col-sm-4 col-sm-offset-4" align="center" style="margin-top: 20px;">
         <div class="card">
-            <div class="header" style=" border:2px solid white; background:#4d1b62; border-radius:20px; padding: 10px">
+            <div class="header" style="border:2px solid white; background:#4d1b62; border-radius:20px; padding: 10px">
                 <h4 class="title" style="color:white; font-weight:800" >Sign-In</h4>
             </div>
             <form action="login.php" method="post">

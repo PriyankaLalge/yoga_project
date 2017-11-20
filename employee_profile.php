@@ -14,8 +14,9 @@ $row = $result->fetch_assoc();
  
 ?>
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=2;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=2;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">

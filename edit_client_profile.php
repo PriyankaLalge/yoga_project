@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=1;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">
@@ -73,7 +74,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Address <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="1" class="form-control border-input UserName_field" placeholder="Here can be your description" value="Mike">
+                                                <textarea rows="1" class="form-control border-input" value="">
                                                 </textarea>
                                             </div>
                                         </div> 
@@ -82,7 +83,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Comments<span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="1" class="form-control border-input UserName_field" placeholder="Here can be your description" value="Mike">
+                                                <textarea rows="1" class="form-control border-input" value="">
                                                 </textarea>
                                             </div>
                                         </div> 

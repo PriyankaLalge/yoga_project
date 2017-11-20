@@ -9,7 +9,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Add Packages</h4>
+                        <h4 class="title">Edit Package</h4>
                     </div>
                     <div class="content">
                         <div class="row">
@@ -68,7 +68,7 @@
                              <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Add</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Save</button></center>
                                 </div>
                             </div>
                             </div>
@@ -77,64 +77,6 @@
                 </div>
             </div>
        
-                <div class="row card_style">
-                       <div class="card">
-                        <div class="col-1">
-                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
-                                <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-4">
-                                                <h3 class="text-uppercase">Package Details</h3>
-                                            </div>
-                                            <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                     <form action="" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                    </h3>
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered"  >
-                                        <thead>
-                                            <tr style="font-weight:bold;" class="header font_tr">
-                                                <th style="font-weight:bold;">Sr No.</th>
-                                                <th style="font-weight:bold;">Category</th>
-                                                <th style="font-weight:bold;">Status</th> 
-                                                <th style="font-weight:bold;">Plan</th> 
-                                                <th style="font-weight:bold;">Time</th>
-                                                <th style="font-weight:bold;">Batch</th>
-                                                <th style="font-weight:bold;">Fees</th>
-                                                <th style="font-weight:bold;">Notes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="myTable">
-                                            <tr>
-                                               <td>1</td>
-                                                <td><a href="">hgfvh</a></td>
-                                                <td>paid</td>
-                                                <td>Monthly</td>
-                                                <td>9-6</td> 
-                                                <td>B1</td>
-                                                <td>345</td> 
-                                                <td>gtfdyrt</td>
-                                                 <td><a href="edit_packages.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table> 
-                                </div>                          
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 

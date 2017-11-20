@@ -6,8 +6,9 @@ if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){
 /*user access contrl by session*/
 ?>
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=2;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=2;require_once 'nav.php'; ?>
 
   <div class="content">
         <div class="container-fluid">
@@ -235,19 +236,18 @@ $url = "assets/empl_image/$Name.jpg";
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Address <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input UserName_field" name="address"placeholder="your address" >
+                                    <textarea rows="5" class="form-control border-input" name="address"placeholder="your address" >
                                     </textarea>
                                 </div>
                             </div> 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Comments <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="5" class="form-control border-input UserName_field" name="comment" placeholder="Here can be your description" >
+                                    <textarea rows="5" class="form-control border-input" name="comment" placeholder="Here can be your description" >
                                     </textarea>
                                 </div>
                             </div>

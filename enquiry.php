@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=11;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=11;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">
@@ -55,14 +56,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Preference <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="1" class="form-control border-input UserName_field" placeholder="Here can be your description" value="Mike">
+                                    <textarea rows="1" class="form-control border-input" value="">
                                     </textarea>
                                 </div>
                             </div> 
                               <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Comment <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="1" class="form-control border-input UserName_field" placeholder="Here can be your description" value="Mike">
+                                    <textarea rows="1" class="form-control border-input"  value="">
                                     </textarea>
                                 </div>
                             </div> 
@@ -78,7 +79,7 @@
                 </div>
             </div>
        
-                <div class="row">
+                <div class="row card_style">
                        <div class="card">
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">

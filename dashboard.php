@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
 <?php $page=0;require_once 'sidebar.php'; ?>
-<?php require_once 'nav.php'; ?>
+<?php $nav=0;require_once 'nav.php'; ?>
 
         <div class="content">
             <div class="container-fluid">
@@ -66,7 +67,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                           <a><p>Batches</p></a> 
+                                           <a href="batches.php"><p>Batches</p></a> 
                                             
                                         </div>
                                     </div>
@@ -74,7 +75,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                       <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Batch</a> 
+                                       <a href="batches.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Batch</a> 
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +92,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                           <a><p>Packages</p></a> 
+                                           <a href="packages.php"><p>Packages</p></a> 
                                             
                                         </div>
                                     </div>
@@ -99,7 +100,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                        <a> <i class="fa fa-plus" aria-hidden="true"></i>Add new Package</a> 
+                                        <a href="packages.php"> <i class="fa fa-plus" aria-hidden="true"></i>Add new Package</a> 
                                     </div>
                                 </div>
                             </div>
@@ -119,15 +120,14 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                           <a><p>Attendance</p></a> 
-                                            
+                                           <a onClick="toggledisplay('changethis');"><p>Attendance</p></a> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                        <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Attendance</a> 
+                                        <a onClick="toggledisplay('changethis');"><i class="fa fa-plus" aria-hidden="true"></i>View Attendance</a> 
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                           <a><p>Notifications</p></a> 
+                                           <a href="notifications.php"><p>Notifications</p></a> 
                                             
                                         </div>
                                     </div>
@@ -152,7 +152,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                       <a> <i class="fa fa-plus" aria-hidden="true"></i>View Notifications</a> 
+                                       <a href="notifications.php"> <i class="fa fa-plus" aria-hidden="true"></i>View Notifications</a> 
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                          <a><p>Accounts</p></a>  
+                                          <a href="accounts.php"><p>Accounts</p></a>  
                                             
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                       <a><i class="fa fa-plus" aria-hidden="true"></i>Add Account</a> 
+                                       <a href="accounts.php"><i class="fa fa-plus" aria-hidden="true"></i>Add Account</a> 
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                           <a><p>Enquiry</p></a> 
+                                           <a href="enquiry.php"><p>Enquiry</p></a> 
                                             
                                         </div>
                                     </div>
@@ -202,7 +202,81 @@
                                 <div class="footer">
                                     <hr />
                                     <div class="stats">
-                                       <a><i class="fa fa-plus" aria-hidden="true"></i>Add new Enquiry</a> 
+                                       <a href="enquiry.php"><i class="fa fa-plus" aria-hidden="true"></i>Add new Enquiry</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="changethis" style="display:none;">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                          <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                           <a href="client_attendance.php"><p> Client Attendance</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <a href="client_attendance.php"><i class="fa fa-plus" aria-hidden="true"></i>Client Attendance</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                          <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                           <a href="employee_attendance.php"><p> Trainer Attendance</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <a href="employee_attendance.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Attendance</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                          <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                           <a href="trainer_attendance.php"><p> Trainer Attendance</p></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <a href="trainer_attendance.php"><i class="fa fa-plus" aria-hidden="true"></i>Trainer Attendance</a> 
                                     </div>
                                 </div>
                             </div>
@@ -214,6 +288,15 @@
 
      <?php require_once 'footer.php'; ?>
   <?php require_once 'script_include.php'; ?>
+ 
+ <script>
+    function toggledisplay(elementID)
+    {
+        (function(style) {
+            style.display = style.display === 'none' ? '' : 'none';
+        })(document.getElementById(elementID).style);
+    }
+    </script>
   
 
     
