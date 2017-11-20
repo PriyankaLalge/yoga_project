@@ -126,77 +126,73 @@ $url = "assets/empl_image/$Name.jpg";
                     <div class="content">
                     <form action="add_employee.php" method="post" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Name <span class="required" style="color:red;"> * </span></label>
                                     <input type="text" class="form-control border-input surnameInput" placeholder="name" name="e_name" >
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Contact No. <span class="required" style="color:red;"> * </span></label>
                                     <input type="text" maxlength="10" class="form-control border-input phoneInput" placeholder="Contact No." name="contact">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address <span class="required" style="color:red;"> * </span></label>
                                     <input type="email" class="form-control border-input UserName_field " placeholder="Email" name="Email">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                             <div class="form-group">
                                 <label>Gender <span class="required" style="color:red;"> * </span></label>
                                 <div>
                                     <select  class="form-control student_admission border-input" name="Gender" required>
-                                        <option >---------------Gender---------------</option>
+                                        <option >---------Gender---------</option>
                                         <option name="Gender" value="male">Male</option>
                                         <option name="Gender" value="female">Female</option>  
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                             <div class="form-group">
                                 <label>Date of birth <span class="required" style="color:red;"> * </span></label>
                                 <input type="date" class="form-control border-input datepicker" name="DOB" required>
                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Anniversary<span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input datepicker"  name="anniversary"  required>
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Employee ID <span class="required" style="color:red;"> * </span></label>
                                     <input type="text" class="form-control border-input phoneInput" placeholder="" name="emp_reg">
                                 </div>
                             </div>  
-                             <div class="col-md-6">
+                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Date of joining<span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input datepicker"  name="date_joint"  required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-md-3">
+                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Date of registration<span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input datepicker"  name="date_reg"required>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                             <div class="form-group">
                                 <label>Status <span class="required" style="color:red;"> * </span></label>
                                 <div>
@@ -208,7 +204,7 @@ $url = "assets/empl_image/$Name.jpg";
                                 </div>
                             </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                             <?php 
                                 if(isset($_POST['submit']))
@@ -219,7 +215,7 @@ $url = "assets/empl_image/$Name.jpg";
                                 <input type="file" class="form-control border-input "  name="img" accept="image/*" required>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                <?php 
                                 if(isset($_POST['submit']))

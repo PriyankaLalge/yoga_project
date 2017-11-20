@@ -1,8 +1,8 @@
 <?php
 // Start the session
-session_start();
-if(!empty($_SESSION)){
-if(($_SESSION['permission']=='admin') || ($_SESSION['permission']=='superadmin')||($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){
+//session_start();
+//if(!empty($_SESSION)){
+//if(($_SESSION['permission']=='admin') || ($_SESSION['permission']=='superadmin')||($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){
 /* access control to user by session*/
 ?>
 
@@ -360,14 +360,14 @@ curl_close($ch);
      <?php require_once 'footer.php'; ?>
   <?php require_once 'script_include.php'; ?>
  <?php
-}
-else{ 
-echo '<script language="javascript">';
-echo 'alert("Access denied");window.location = "client.php" </script>';
-}}
-
-else //echo "<h1>No User Logged In</h1>";
-{header('Location: index.php');}
+//}
+//else{ 
+//echo '<script language="javascript">';
+//echo 'alert("Access denied");window.location = "client.php" </script>';
+//}}
+//
+//else //echo "<h1>No User Logged In</h1>";
+//{header('Location: index.php');}
 ?> 
 
     

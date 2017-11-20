@@ -57,76 +57,93 @@ $row = $result->fetch_assoc();
                         <form action="edit_employee_api.php" method="POST">
                             <input type="hidden" name="emp_ID" value="<?php echo $id;?>" >
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name <span class="required" style="color:red;"> * </span></label>
                                         <input type="text" class="form-control border-input surnameInput"  name="e_name" value="<?php echo $row['e_name'] ?>" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Contact No. <span class="required" style="color:red;"> * </span></label>
                                         <input type="text" maxlength="10" class="form-control border-input phoneInput" name="contact" value="<?php echo $row['contact'] ?>"  required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address </label>
                                         <input type="email" class="form-control border-input UserName_field" name="Email" value="<?php echo $row['Email'] ?>">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Gender <span class="required" style="color:red;"> * </span></label>
                                     <div>
                                         <select  class="form-control student_admission border-input"  name="Gender" required>
                                             <option ><?php echo $row['Gender'] ?></option>
-                                            <option >---------------Gender---------------</option>
+                                            <option >---------Gender---------</option>
                                             <option name="Gender" value="male">Male</option>
                                             <option name="Gender" value="female">Female</option>  
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Date of birth <span class="required" style="color:red;"> *   </span></label>
                                     <input type="date" class="form-control border-input datepicker" name="DOB" value="<?php echo $row['DOB'] ?>" required>
                                    </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Anniversary</label>
                                         <input type="date" class="form-control border-input"  name="anniversary" value="<?php echo $row['anniversary'] ?>" >
                                     </div>
                                 </div>
-                            </div>
+                        </div>
+                          
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Employee ID <span class="required" style="color:red;"> * </span></label>
                                         <input type="text" class="form-control border-input phoneInput" value="<?php echo $row['emp_reg'] ?>" name="emp_reg" required>
                                     </div>
                                 </div>  
-                                 <div class="col-md-6">
+                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Date of joining<span class="required" style="color:red;"> * </span></label>
                                         <input type="date" class="form-control border-input "  name="date_joint" value="<?php echo $row['date_joint'] ?>" required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                               <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Date of registration<span class="required" style="color:red;"> * </span></label>
                                         <input type="date" class="form-control border-input "  name="date_reg" value="<?php echo $row['date_reg'] ?>" required>
                                     </div>
                                 </div>
-                                 <div class="col-md-6">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Status <span class="required" style="color:red;"> * </span></label>
+                                <div>
+                                    <select  class="form-control student_admission border-input" name="status" required>
+                                        <option >status</option>
+                                        <option name="status" value="employee">Employee</option>
+                                        <option name="status" value="trainer">Trainer</option>  
+                                    </select>
+                                </div>
+                            </div>
+                            </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Profile Image<span class="required" style="color:red;"> * </span></label>
+                                        <input type="file" class="form-control border-input "  name="" value="">
+                                    </div>
+                                </div>
+                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>ID Doc<span class="required" style="color:red;"> * </span></label>
                                         <input type="file" class="form-control border-input "  name="id_doc" value="<?php echo $row['id_doc'] ?>" >
@@ -137,14 +154,14 @@ $row = $result->fetch_assoc();
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Address <span class="required" style="color:red;"> * </span></label>
-                                        <textarea rows="2" name="address" class="form-control border-input "><?php echo $row['address'];?>
+                                        <textarea rows="1" name="address" class="form-control border-input"><?php echo $row['address'];?>
                                         </textarea>
                                     </div>
                                 </div> 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Comments </label>
-                                        <textarea rows="2" name="comment" class="form-control border-input " ><?php echo $row['comment']; ?>
+                                        <textarea rows="1" name="comment" class="form-control border-input"><?php echo $row['comment']; ?>
                                         </textarea>
                                     </div>
                                 </div>
