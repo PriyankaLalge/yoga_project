@@ -1,8 +1,42 @@
+<?php
+// Start the session
+/*session_start();
+if(!empty($_SESSION)){*/
+?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_batch_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$batch = json_decode($content);
+$batch_view = $batch->batch_view;
+            if(isset($_POST['submit']))
+            { 
+                if(isset($_POST['batch']))
+                {
+                    $data =array('batch'=>$_POST['batch']);
+                }
+            }
+?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_client_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$client = json_decode($content);
+$client_view = $client->client_view;
+  //print_r($client_view);
+?>	   
+
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
 <?php $nav=1;require_once 'nav.php'; ?>
-
+<!--card for add client,client payment,client attendance-->
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -96,15 +130,16 @@
                                                
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable">
-                                            <tr>
+                                        <tbody id="myTable"><?php $i=1; foreach($client_view as $value ): foreach($batch_view as $value1 ):
+                                        if ($value->batch_id == $value1->batch_id){?>
+                                            <tr><?php //print_r($value); ?>
                                                <td>1</td>
                                                 <td><a href="client_profile.php">priyanka</a></td>
                                                 <td>235346456</td>
                                                 <td>b1</td>
                                                 <td>paid</td>
                                                 <td><a href="edit_client_profile.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                                            </tr>
+                                            </tr><?php }endforeach;?><?php endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          
@@ -135,5 +170,10 @@ input[id=teachersearch] {
 }
 
 </style>
-    
+<?php
+/*}
+else 
+    header('Location: index.php');*/
+    //echo "<h1>No User Logged In</h1>";
+?>    
     
