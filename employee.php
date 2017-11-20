@@ -119,7 +119,7 @@ $employee_view = $employe->employee_view;
                                         <td><?php echo $value->contact;?></td>
                                         <td><?php echo $value->Email;?></td>
                                         <td><?php echo $value->status;//$value->e_name;?></td>
-                                        <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                                        <td><a href="edit_employee_profile.php?e_ID=<?php echo $value->e_ID; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                     </tr><?php }endforeach;?>
                                 </tbody>
                             </table> 

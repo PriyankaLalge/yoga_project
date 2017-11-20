@@ -157,11 +157,11 @@ $row = $result->fetch_assoc();
                                 <div class="author">
                                     <img class="avatar border-white" src="<?php echo $row['photo'];?>">
                                   
-                                  <h4 class="title"><br>
-                                     <a >ID : <?php echo $row['e_ID']; ?></a><br>
-                                      <a >name : <?php echo $row['e_name']; ?></a><br>
-                                     <a >Contact No: <?php echo $row['contact']; ?></a><br>
-                                  </h4>
+                                  <h5 class="title"><br>
+                                  ID : <?php echo $row['e_ID']; ?><br>
+                                    name : <?php echo $row['e_name']; ?><br>
+                                     Contact No: <?php echo $row['contact']; ?><br>
+                                  </h5>
                                 </div>
                             </div>
 

@@ -199,7 +199,7 @@ curl_close($ch);
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Contact No. <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="c_contact" >
+                                        <input type="text" maxlength="10" class="form-control border-input phoneInput" placeholder="Contact No." name="c_contact" >
                                     </div>
                                 </div>
                             </div>

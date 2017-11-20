@@ -28,7 +28,7 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                 <label>Contact No.<span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input phoneInput" name="" value="" required>
+                                    <input type="text" maxlength="10" class="form-control border-input phoneInput" name="" value="" required>
                                 </div>
                             </div>
                             </div> 
