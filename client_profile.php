@@ -124,7 +124,59 @@
                                   </h4>
                                 </div>
                             </div>
-
+                        </div>
+                             <div class="card">
+                            <div class="header">
+                                <h4 class="title">Fee Details</h4>
+                            </div>
+                            <div class="content">
+                                <ul class="list-unstyled team-members">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                              Total Fees
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b>200</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                               Discount
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b>100</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                               Recieved
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b>50</b>
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                              Balance
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b>10</b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-7">
@@ -242,51 +294,6 @@
                                             </div>
                                             <div class="col-xs-9">
                                                 <b>11/11/2017</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <br>
-                                     <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                              Total fees:
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Rs 4999</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                             Discount:
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Rs 1242</b>
-                                            </div>
-                                        </div>
-                                    </li> 
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                          Recieved:
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Rs 34643</b>
-                                            </div>
-                                        </div>
-                                    </li> 
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                             Balance:
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Rs 4645</b>
                                             </div>
                                         </div>
                                     </li>
