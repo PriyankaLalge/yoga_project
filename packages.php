@@ -7,6 +7,7 @@ if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){*
 
 ?>
 <!--api for view batch detail while adding new packages-->
+<?php include 'config.php'; ?>
 <?php  
 # Create a connection
 $ch = curl_init();
@@ -18,13 +19,24 @@ $batch = json_decode($content);
 $batch_view = $batch->batch_view;
 //$batch_view = $batch->batch_view;
 ?>
-
+<?php include 'config.php'; ?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_packages_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$packages = json_decode($content);
+$packages_view = $packages->packages_view;
+print_r($packages_view);
+?>
 <!--database connection-->
 
     <div class="content">
         <div class="container-fluid">
             <?php 
-            if(isset($_POST['submit']) && isset($_POST['Catogary'])){ 
+            if(isset($_POST['submit']) && isset($_POST['Catogary']) && isset($_POST['Name_of_plan']) && isset($_POST['Time_unit'])){ 
                 $data = array(
                         'Catogary' => $_POST['Catogary'],
                         'Active' => $_POST['Active'],
@@ -50,7 +62,7 @@ $batch_view = $batch->batch_view;
                     }
                     
                      ?>
-<?php include 'config.php'; ?>
+
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=4;require_once 'sidebar.php'; ?>
@@ -97,17 +109,16 @@ $batch_view = $batch->batch_view;
                          <div class="form-group">
                              <label>Select Plan<span class="required" style="color:red;"> * </span></label> 
                              <select name="batch" class="form-control border-input" required>
-                                 <option value="">---------------Select---------------</option>
-                                 <option value="followdate">fgutyu</option>
-                                 <option value="followdate">fgutyu</option>
+                                 <option >---------------Select---------------</option>
+                                 <option name="batch" value="followdate">fgutyu</option>
+                                 <option name="batch" value="followdate">fgutyu</option>
                              </select>
-
                          </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Fees<span class="required" style="color:red;"> * </span></label>
-                            <input type="text" class="form-control border-input phoneInput" name="Fee"  required >
+                            <input type="text" class="form-control border-input phoneInput" name="Fee" required >
                         </div>
                     </div>
                     </div> 
@@ -122,7 +133,7 @@ $batch_view = $batch->batch_view;
                      <div class="col-md-2">
                         <div class="form-group">
                             <br>
-                            <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Add</button></center>
+                            <center><button type="submit" name="submit" class="btn btn-success" style="margin-top: 8px;">Add</button></center>
                         </div>
                     </div>
                     </div>
@@ -131,7 +142,6 @@ $batch_view = $batch->batch_view;
             </div>
         </div>
     </div>
-
         <div class="row card_style">
                <div class="card">
                 <div class="col-1">
@@ -168,21 +178,23 @@ $batch_view = $batch->batch_view;
                                         <th style="font-weight:bold;">Time</th>
                                         <th style="font-weight:bold;">Batch</th>
                                         <th style="font-weight:bold;">Fees</th>
-                                        <th style="font-weight:bold;">Notes</th>
+                                        <!--//<th style="font-weight:bold;">Notes</th>-->
                                     </tr>
+                                  
                                 </thead>
-                                <tbody id="myTable">
+                                <tbody id="myTable"><?php foreach($packages_view as $value):?>
                                     <tr>
                                        <td>1</td>
-                                        <td><a href="">hgfvh</a></td>
-                                        <td>paid</td>
-                                        <td>Monthly</td>
-                                        <td>9-6</td> 
-                                        <td>B1</td>
-                                        <td>345</td> 
-                                        <td>gtfdyrt</td>
+                                        <td><a href=""><?php echo $value->Catogary?></a></td>
+                                        <td><?php echo $value->Active?></td>
+                                        <td><?php echo $value->Name_of_plan?></td>
+                                        <td><?php echo $value->Time_unit?></td> 
+                                        <td><?php echo $value->batch?></td>
+                                        <td><?php echo $value->fee?></td> 
+                                       <!-- <td><?php echo $value->Catogary?></td>-->
                                          <td><a href="edit_packages.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                     </tr>
+                                      <?php endforeach; ?>
                                 </tbody>
                             </table> 
                         </div>                          
