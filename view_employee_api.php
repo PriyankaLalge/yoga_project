@@ -4,7 +4,7 @@ loc no 7-- //connect to database
 loc no 8-- // query to database for SELECT in Employee table
 loc no 19--//  0 result
 */
-include 'config.php';
+require_once '../dbConfig/config.php';
 $sql = "SELECT * FROM employee ORDER BY e_ID DESC";
 $result = $conn->query($sql);
 $employee = array();

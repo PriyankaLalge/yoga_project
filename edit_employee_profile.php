@@ -5,7 +5,7 @@ if(!empty($_SESSION)){*/
 ?>
 
 <?php 
-include 'config.php';
+require_once '../dbConfig/config.php';
 $id = $_GET['e_ID'];
 $sql = "SELECT * FROM employee WHERE e_ID = '$id'";
 $result = $conn->query($sql);   

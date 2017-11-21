@@ -4,7 +4,7 @@ loc no 8-- //connect to database
 loc no 11-- // query to database for SELECT in employee table
 loc no 22--//  0 result
 */
-include 'config.php';
+require_once '../dbConfig/config.php';
 if(isset($_POST['e_ID']) ){
   $eid = $_POST['e_ID'];
     

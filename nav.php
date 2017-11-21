@@ -1,3 +1,14 @@
+
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/notifi_view_enquiry_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$enquiry = json_decode($content);
+$enquiry_view_1 = $enquiry->enquiry_view;
+?> 
 <div class="main-panel">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -53,16 +64,28 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
 									<p>Notifications</p>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
+                                <table class="table table-striped table-bordered"  >
+                                        <thead>
+                                            <tr style="font-weight:bold;" class="header font_tr">
+                                                <th style="font-weight:bold;">Name</th>
+                                                <th style="font-weight:bold;">Mobile</th> 
+                                                <th style="font-weight:bold;">FollowUp</th>
+                                                <th style="font-weight:bold;">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable"><?php $i=0;foreach($enquiry_view_1 as $value): { ?>
+                                            <tr>
+                                                <td><a href=""><?php echo $value->fullName; ?></a></td>
+                                                <td><?php echo $value->contNo;?></td>
+                                                <td><?php echo $value->followDate; ?></td>
+                                                <td><?php echo $value->Comment; ?></td>
+                                            </tr><?php }endforeach;?>
+                                        </tbody>
+                                    </table> 
                               </ul>
                         </li> 
                         

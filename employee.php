@@ -114,8 +114,6 @@ $employee_view = $employe->employee_view;
                                     <tr>
                                        <td><?php $i++; echo $i;?></td>
                                         <td><a href="employee_profile.php?e_ID=<?php echo $value->e_ID;?>"><?php echo $value->e_name;?></a></td>
-
-
                                         <td><?php echo $value->contact;?></td>
                                         <td><?php echo $value->Email;?></td>
                                         <td><?php echo $value->status;//$value->e_name;?></td>

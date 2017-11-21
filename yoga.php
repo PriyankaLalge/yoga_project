@@ -283,16 +283,15 @@ if ($conn->query($sql14) === TRUE) {
 
 // sql to create table
 $sql15 = "CREATE TABLE enquiry (
-token_no INT(11) AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(50),
-surname VARCHAR(50),
-email VARCHAR(50),
-contact VARCHAR(50),
-date VARCHAR(50),
-followupdate VARCHAR(50),
-followuptime VARCHAR(50),
-status VARCHAR(50),
-message VARCHAR(100)
+enq_ID INT(11) AUTO_INCREMENT PRIMARY KEY, 
+fullName VARCHAR(50),
+enqEmail VARCHAR(50),
+contNo VARCHAR(50),
+enqDate VARCHAR(50),
+followDate VARCHAR(50),
+followTime VARCHAR(50),
+preFrence VARCHAR(50),
+Comment VARCHAR(100)
 )";
 
 if ($conn->query($sql15) === TRUE) {

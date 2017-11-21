@@ -1,5 +1,5 @@
 <?php 
-include 'config.php';
+require_once '../dbConfig/config.php';
 /*
 line no 2-- //connect to database
  line no 17-- // query to database for insert data in Employee table
