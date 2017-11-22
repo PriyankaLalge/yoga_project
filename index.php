@@ -5,7 +5,7 @@ session_start();
 ?>
 
 <?php
-if(isset($_POST['login'])&&!empty($_POST['username'])&&!empty($_POST['password'])){
+/*if(isset($_POST['login'])&&!empty($_POST['username'])&&!empty($_POST['password'])){
     include 'config.php';
     $username = $_POST['username']; 
     $password = $_POST['password'];
@@ -16,38 +16,36 @@ if(isset($_POST['login'])&&!empty($_POST['username'])&&!empty($_POST['password']
     $_SESSION["username"] = $username;
     $_SESSION["password"] = $password;
     $_SESSION["permission"] = $row['permission'];
-}
-    if(isset($_POST['login'])&&!empty($_POST['username'])&&!empty($_POST['password'])){
-$username = $_POST['username'];
-$password = $_POST['password'];
-$data = array(
-    'username' => $_POST['username'],
-    'password' => $_POST['password'],
-);  
-# Create a connection
-$url = 'http://localhost/yoga_project/select_user_api.php';
-$ch = curl_init($url);
-# Form data string
-$postString = http_build_query($data, '', '&');
-# Setting our options
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-# Get the response
-$response = curl_exec($ch);
+}*/
+if(isset($_POST['login'])&&!empty($_POST['username'])&&!empty($_POST['password'])){
+    $data = array(
+        'username' => $_POST['username'],
+        'password' => $_POST['password'],
+    );  
+    # Create a connection
+    //$url = 'http://localhost/yoga_project/select_user_api.php';
+    $url = 'http://localhost/yoga_project/Viewapi/index_api.php';
+    $ch = curl_init($url);
+    # Form data string
+    $postString = http_build_query($data, '', '&');
+    # Setting our options
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    # Get the response
+    $response = curl_exec($ch);
 
-if($response === "Notadmin"){
-    
-    echo "<script>alert('Not Valid Username or Password')</script>";
-}
-        else {
-            echo "<script>debugger;window.location = 'dashboard.php';</script>";
-        }
-curl_close($ch);
+    if($response === "admin"){
+        echo "<script>window.location = 'viewPage/dashboard.php';</script>";
+    }
+    else {
+        echo "<script>alert('Not Valid Username or Password')</script>";
+    }
+    curl_close($ch);
     }
 ?>
 
-<?php include "header.php" ?>
+<?php include "headerLogin.php" ?>
 <body><br><br>
     <div class="col-sm-4 col-sm-offset-4">
         <center>
@@ -61,7 +59,7 @@ curl_close($ch);
             <div class="header" style="border:2px solid white; background:#4d1b62; border-radius:20px; padding: 10px">
                 <h4 class="title" style="color:white; font-weight:800" >Sign-In</h4>
             </div>
-        <form action="index_api.php" method="post">
+        <form action="index.php" method="post">
             <div class="content" padding-left="10px" >
                 <div class="row" >                        
                     <div class="col-md-12">
@@ -86,6 +84,6 @@ curl_close($ch);
             </div>
             </form>
         </div>
-        <?php include "footer.php"?>
+        <?php include "footerLogin.php"?>
     </div>
 </body>
