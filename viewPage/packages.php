@@ -6,8 +6,11 @@ if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){*
 /*start of user access control by session*/
 
 ?>
+
+ 
+
 <!--api for view batch detail while adding new packages-->
-<?php  
+<!--<?php  
 # Create a connection
 $ch = curl_init();
 curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_batch_api.php');
@@ -17,36 +20,42 @@ $content = curl_exec($ch);
 $batch = json_decode($content);
 $batch_view = $batch->batch_view;
 //$batch_view = $batch->batch_view;
-?>
+?>-->
 
 <?php  
 # Create a connection
 $ch = curl_init();
-curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_packages_api.php');
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_packages_api.php');
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 # Get the response
 $content = curl_exec($ch);
 $packages = json_decode($content);
 $packages_view = $packages->packages_view;
-print_r($packages_view);
 ?>
 <!--database connection-->
 
     <div class="content">
         <div class="container-fluid">
-            <?php 
-            if(isset($_POST['submit']) && isset($_POST['Catogary']) && isset($_POST['Name_of_plan']) && isset($_POST['Time_unit'])){ 
+<?php require_once 'header.php'; ?>
+<?php require_once 'custome_style.php'; ?>
+<?php $page=4;require_once 'sidebar.php'; ?>
+<?php $nav=4;require_once 'nav.php'; ?>
+
+<div class="content">
+    <div class="container-fluid">
+        <?php 
+            if(isset($_POST['submit']) && isset($_POST['Category']) && isset($_POST['Name_of_package']) && isset($_POST['Time'])){ 
                 $data = array(
-                        'Catogary' => $_POST['Catogary'],
+                        'Category' => $_POST['Category'],
                         'Active' => $_POST['Active'],
-                        'Name_of_plan' => $_POST['Name_of_plan'],
-                        'Time_unit' => $_POST['Time_unit'],
+                        'Name_of_package' => $_POST['Name_of_package'],
+                        'Time' => $_POST['Time'],
                         'batch' => $_POST['batch'],
                         'Description' => $_POST['Description'],
                         'Fee' => $_POST['Fee']
                     );
                     # Create a connection
-                    $url = 'http://localhost/yoga_project/add_packages_api.php';
+                    $url = 'http://localhost/yoga_project/Insertapi/add_packages_api.php';
                     $ch = curl_init($url);
                     # Form data string
                     $postString = http_build_query($data, '', '&');
@@ -62,13 +71,7 @@ print_r($packages_view);
                     
                      ?>
 
-<?php require_once 'header.php'; ?>
-<?php require_once 'custome_style.php'; ?>
-<?php $page=4;require_once 'sidebar.php'; ?>
-<?php $nav=4;require_once 'nav.php'; ?>
 
-<div class="content">
-    <div class="container-fluid">
        <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -81,7 +84,7 @@ print_r($packages_view);
                     <div class="col-md-4">
                         <div class="form-group">
                         <label>Category<span class="required" style="color:red;"> * </span></label>
-                            <input type="text" class="form-control border-input UserName_field" name="Catogary" required>
+                            <input type="text" class="form-control border-input UserName_field" name="Category" required>
                         </div>
                     </div>
                      <div class="col-md-4">
@@ -93,7 +96,7 @@ print_r($packages_view);
                      <div class="col-md-4">
                         <div class="form-group">
                         <label>Name of the Package<span class="required" style="color:red;"> * </span></label>
-                            <input type="text" class="form-control border-input UserName_field" name="Name_of_plan" required>
+                            <input type="text" class="form-control border-input UserName_field" name="Name_of_package" required>
                         </div>
                     </div>
                     </div> 
@@ -101,12 +104,12 @@ print_r($packages_view);
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Time<span class="required" style="color:red;"> * </span></label>
-                            <input type="text" class="form-control border-input UserName_field" name="Time_unit" required >
+                            <input type="text" class="form-control border-input UserName_field" name="Time" required >
                         </div>
                     </div> 
                      <div class="col-md-4">
                          <div class="form-group">
-                             <label>Select Plan<span class="required" style="color:red;"> * </span></label> 
+                             <label>Select Batch<span class="required" style="color:red;"> * </span></label> 
                              <select name="batch" class="form-control border-input" required>
                                  <option >---------------Select---------------</option>
                                  <option name="batch" value="followdate">fgutyu</option>
@@ -184,13 +187,12 @@ print_r($packages_view);
                                 <tbody id="myTable"><?php foreach($packages_view as $value):?>
                                     <tr>
                                        <td>1</td>
-                                        <td><a href=""><?php echo $value->Catogary?></a></td>
+                                        <td><a href=""><?php echo $value->Category?></a></td>
                                         <td><?php echo $value->Active?></td>
-                                        <td><?php echo $value->Name_of_plan?></td>
-                                        <td><?php echo $value->Time_unit?></td> 
+                                        <td><?php echo $value->Name_of_package?></td>
+                                        <td><?php echo $value->Time?></td> 
                                         <td><?php echo $value->batch?></td>
                                         <td><?php echo $value->fee?></td> 
-                                       <!-- <td><?php echo $value->Catogary?></td>-->
                                          <td><a href="edit_packages.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                     </tr>
                                       <?php endforeach; ?>

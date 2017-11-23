@@ -208,10 +208,10 @@ if ($conn->query($sql9) === TRUE) {
 
 $sql10 = "CREATE TABLE packages (
 Cat_ID INT(10) AUTO_INCREMENT PRIMARY KEY, 
-Catogary VARCHAR(50), 
+Category VARCHAR(50), 
 Active VARCHAR(50),
-Name_of_plan VARCHAR(50),
-Time_unit VARCHAR(50),
+Name_of_package VARCHAR(50),
+Time VARCHAR(50),
 batch VARCHAR(50),
 Description VARCHAR(100),
 fee VARCHAR(100)
