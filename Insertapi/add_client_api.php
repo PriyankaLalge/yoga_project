@@ -29,9 +29,9 @@ require_once '../dbConfig/config.php';           //connect to database
     if ($conn->query($sql) === TRUE) {     
        $last_id = $conn->insert_id;
         $extension = explode("/",$photo['type']);
-        $pro_url = "../assets/empl_image/$last_id.$extension[1]";
+        $pro_url = "../assets/client_image/$last_id.$extension[1]";
         $name = file_get_contents($photo['tmp_name']);
-        file_put_contents("../assets/empl_image/$last_id.$extension[1]",$name);  
+        file_put_contents("../assets/client_image/$last_id.$extension[1]",$name);  
        
         $sql1 = "UPDATE `client` SET `photo`='$pro_url' WHERE c_ID=$last_id";
         $conn->query($sql1);
