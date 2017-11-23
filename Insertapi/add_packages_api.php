@@ -1,23 +1,22 @@
 <?php 
-include 'config.php';
-if(isset($_POST['Catogary']) && isset($_POST['Active']) && isset($_POST['Name_of_plan']) && isset($_POST['Time_unit']) && isset($_POST['batch']) && isset($_POST['Description']))  {           //connect to databasse
-//if packages name and packages time is  submited then go in condition
-    $Catogary = $_POST['Catogary'];
+require_once '../dbConfig/config.php';
+if(isset($_POST['Category']) && isset($_POST['Active']) && isset($_POST['Name_of_package']) && isset($_POST['Time']) && isset($_POST['batch']) && isset($_POST['Description']) ){          
+    
+    $Category = $_POST['Category'];
     $Active = $_POST['Active'];
-    $Name_of_plan = $_POST['Name_of_plan'];
-    $Time_unit = $_POST['Time_unit'];
+    $Name_of_package = $_POST['Name_of_package'];
+    $Time = $_POST['Time'];
     $batch = $_POST['batch'];
     $Description = $_POST['Description'];
     $Fee = $_POST['Fee'];
     
-    $sql = "INSERT INTO `packages` (`Catogary`, `Active`, `Name_of_plan`, `Time_unit`, `batch`, `Description`,`Fee`) VALUES ('$Catogary', '$Active', '$Name_of_plan', '$Time_unit' ,'$batch','$Description','$Fee')";            
-// insert into packages table if packages name and batch time is set                                                                
+    $sql = "INSERT INTO `packages` (`Category`, `Active`, `Name_of_package`, `Time`, `batch`, `Description`,`Fee`) VALUES ('$Category', '$Active', '$Name_of_package', '$Time' ,'$batch','$Description','$Fee')";            
+                                                         
      if ($conn->query($sql) === TRUE) {                      
-// if query is connected then print as success and go in next loop
         ?> 
 <div class="alert alert-success" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria- hidden="true">&times;</span></button>
-        <strong>Success!</strong> packages information added successfully!
+        <strong>Success!</strong> package information added successfully!
 </div>
 <script>
     window.setTimeout(function() {
@@ -28,7 +27,7 @@ if(isset($_POST['Catogary']) && isset($_POST['Active']) && isset($_POST['Name_of
 </script>
     <?php
         //echo "<script>alert('Client created successfully')</script>";
-    } else {                    // if query is not connected to databassse successfully print as unsuccessful
+    } else {                   
          
         ?> 
 <div class="alert alert-danger" role="alert">
@@ -48,7 +47,7 @@ if(isset($_POST['Catogary']) && isset($_POST['Active']) && isset($_POST['Name_of
 //        echo "While adding Client <br> Error: " . $sql . "<br>" . $conn->error;
     }
 }
-else {                                      //if query is connected but no value in it then print as NO value found 
+else {                                    
     echo "<script> alert('no Value Found while adding packages') </script>";
 }
 ?>
