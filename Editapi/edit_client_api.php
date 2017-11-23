@@ -27,7 +27,7 @@ $enddate = $_POST['enddate'];
 $c_fees = $_POST['c_fees'];
 $Discount = $_POST['Discount'];
 $received = $_POST['received'];
-$balance = $_POST['balance';
+$balance = $_POST['balance'];
     /*if(empty($photo['name'])){
         $pro_url = $photo;
     }
@@ -48,15 +48,15 @@ $balance = $_POST['balance';
         $name_1 = file_get_contents($id_doc['tmp_name']);
          file_put_contents("../assets/empl_doc/$eid.$extension_1[1]",$name_1);
     }*/
-    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='address',`contact`='contact',`fees`='fees',`received`='received',`discount`='discount',`balance`='balance',`package`='package',`startdate`='startdate',`enddate`='enddate',`email`='email',`Lead_By`='Lead_By',`photo`='photo',`Comments`='Comments',`batch_id`='batch_id' WHERE `c_ID`='$c_id'";
+    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='$c_address',`contact`='$c_contact',`fees`='$c_fees',`received`='$received',`discount`='$Discount',`balance`='$balance',`package`='$package',`startdate`='$startdate',`enddate`='$enddate',`email`='$email',`Lead_By`='$Lead_By',`photo`='photo',`Comments`='$Comments',`batch_id`='$batch' WHERE `c_ID`='$c_id'";
      
     if ($conn->query($sql) === TRUE)
         { 
-        echo "<script>alert('successsFully Updated');window.location.href='employee.php';</script>";
+        echo "<script>alert('successsFully Updated');window.location.href='clients.php';</script>";
 //        echo "<script>alert('Employee information edited successfully')</script>";
     } else {  
-            
-          echo "<script>alert('unsuccessfully entry')</script>";
+            echo $c_id;
+         echo("Error description: " . mysqli_error($conn));
 
     }
 ?>

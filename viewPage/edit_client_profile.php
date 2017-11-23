@@ -69,6 +69,26 @@ if(isset($_POST['edit_client'])){
     curl_close($ch);  
 }
 ?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_batch_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$batch = json_decode($content);
+$batch_view = $batch->batch_view;
+?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_packages_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$packages = json_decode($content);
+$packages_view = $packages->packages_view;
+?>
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
@@ -84,7 +104,7 @@ if(isset($_POST['edit_client'])){
                             </div>
                             <div class="content">
                                 <form action="edit_client_profile.php" method="post">
-                                    <input type="hidden" value="$_GET['c_id']" name="c_id" />
+                                    <input type="hidden" value="<?php echo $_GET['c_id'] ?>" name="c_id" />
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -182,10 +202,15 @@ if(isset($_POST['edit_client'])){
                                             <label>Package Type<span class="required" style="color:red;"> * </span></label>
                                             <div>
                                                 <select  class="form-control student_admission border-input"  name="package" required>
-                                                    <option value="<?php echo $client_view[0]->package;?>"><?php echo $client_view[0]->package;?></option>
-                                                    <option value="">---------------Select---------------</option>
-                                                    <option value="regularcourse">rakesh</option>
-                                                    <option value="crashcourse">Mahesh</option>  
+                                                    <?php foreach($packages_view as $package): 
+                                                        if($client_view[0]->package == $package->Cat_ID){
+                                                            ?>
+                                                    <option value="<?php echo $package->Cat_ID; ?>"><?php echo $package->Category; ?></option><option value="">---------------Select---------------</option>
+                                                    <?php
+                                                        }else{
+                                                    ?>
+                                                    <option value="<?php echo $package->Cat_ID; ?>"><?php echo $package->Category; ?></option>
+                                                    <?php } endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -195,10 +220,13 @@ if(isset($_POST['edit_client'])){
                                             <label>Batch Name<span class="required" style="color:red;"> * </span></label>
                                             <div>
                                                 <select  class="form-control student_admission border-input"  name="batch" required>
-                                                    <option value="<?php echo $client_view[0]->batch_id;?>"><?php echo $client_view[0]->batch_id;?></option>
-                                                    <option value="">---------------Select---------------</option>
-                                                    <option value="regularcourse">rakesh</option>
-                                                    <option value="crashcourse">Mahesh</option>  
+                                                    <?php foreach($batch_view as $batch):  if($client_view[0]->batch_id == $batch->batch_id){?>
+                                                    <option value="<?php echo $batch->batch_id; ?>"><?php echo $batch->batch_name; ?></option><option value="">---------------Select---------------</option>
+                                                    <?php }else{?>
+                                                    
+                                                    
+                                                    <option value="<?php echo $batch->batch_id; ?>"><?php echo $batch->batch_name; ?></option>
+                                            <?php }endforeach; ?>  
                                                 </select>
                                             </div>
                                         </div>
