@@ -187,7 +187,7 @@ $packages_view = $packages->packages_view;
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Profile Photo<span class="required" style="color:red;"> * </span></label>
-                                        <input rows="1" type="file" class="form-control border-input" name="cpro_img" accept="image/*">
+                                        <input  type="file" class="form-control border-input" name="cpro_img" accept="image/*">
                                       
                                     </div>
                                 </div> 

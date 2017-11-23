@@ -203,7 +203,7 @@ if(isset($_POST['edit_emp'])){
                                  <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Profile Image<span class="required" style="color:red;"> * </span></label>
-                                        <input type="file" class="form-control border-input"  name="pro_img">
+                                        <input type="file" class="form-control border-input" accept="image/*"   name="pro_img">
                                     </div>
                                 </div>
                                  <div class="col-md-4">

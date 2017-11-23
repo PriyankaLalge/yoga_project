@@ -28,27 +28,19 @@ $c_fees = $_POST['c_fees'];
 $Discount = $_POST['Discount'];
 $received = $_POST['received'];
 $balance = $_POST['balance'];
-    /*if(empty($photo['name'])){
+ $photo = $_POST['photo'];
+    if(empty($photo['name'])){
         $pro_url = $photo;
     }
     else{
         $extension = explode("/",$photo['type']);
-        $pro_url = "../assets/empl_image/$eid.$extension[1]";
+        $pro_url = "../assets/client_image/$c_id.$extension[1]";
         $name = file_get_contents($photo['tmp_name']);
         //$extension = explode("/",$photo['type']);
-        file_put_contents("../assets/empl_image/$eid.$extension[1]",$name);
+        file_put_contents("../assets/client_image/$c_id.$extension[1]",$name);
     }
-    if(empty($id_doc['name'])){
-        $pro_url_1 = $id_doc;
-    }
-    else{
-        echo "not empty";
-        $extension_1 = explode("/",$id_doc['type']);
-        $pro_url_1 = "../assets/empl_doc/$eid.$extension_1[1]";
-        $name_1 = file_get_contents($id_doc['tmp_name']);
-         file_put_contents("../assets/empl_doc/$eid.$extension_1[1]",$name_1);
-    }*/
-    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='$c_address',`contact`='$c_contact',`fees`='$c_fees',`received`='$received',`discount`='$Discount',`balance`='$balance',`package`='$package',`startdate`='$startdate',`enddate`='$enddate',`email`='$email',`Lead_By`='$Lead_By',`photo`='photo',`Comments`='$Comments',`batch_id`='$batch' WHERE `c_ID`='$c_id'";
+    
+    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='$c_address',`contact`='$c_contact',`fees`='$c_fees',`received`='$received',`discount`='$Discount',`balance`='$balance',`package`='$package',`startdate`='$startdate',`enddate`='$enddate',`email`='$email',`Lead_By`='$Lead_By',`photo`='$pro_url',`Comments`='$Comments',`batch_id`='$batch' WHERE `c_ID`='$c_id'";
      
     if ($conn->query($sql) === TRUE)
         { 

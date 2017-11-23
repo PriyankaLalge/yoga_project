@@ -19,18 +19,12 @@ if(isset($_GET['c_id'])){
     curl_close($ch);
 }
 if(isset($_POST['edit_client'])){
-    /*if(empty($_FILES['pro_img']['name'])){
-        $photo1 = $_POST['e_photo'];
+    if(empty($_FILES['cpro_img']['name'])){
+        $photo1 = $_POST['c_photo'];
     }
     else{
-        $photo1 = $_FILES['pro_img'];
+        $photo1 = $_FILES['cpro_img'];
     }
-    if(empty($_FILES['id_doc']['name'])){
-        $doc1 = $_POST['e_doc'];
-    }
-    else{
-        $doc1 = $_FILES['id_doc'];
-    }*/
     $data = array( 
         'c_id' =>$_POST['c_id'],
         'c_name' => $_POST['c_name'],
@@ -52,7 +46,8 @@ if(isset($_POST['edit_client'])){
         'c_fees' => $_POST['c_fees'],
         'Discount' => $_POST['Discount'],
         'received' => $_POST['received'],
-        'balance' => $_POST['balance']
+        'balance' => $_POST['balance'],
+         'photo' => $photo1
     );
     # Create a connection
     $url = 'http://localhost/yoga_project/Editapi/edit_client_api.php';
@@ -103,31 +98,32 @@ $packages_view = $packages->packages_view;
                                 <h4 class="title">Edit Client</h4>
                             </div>
                             <div class="content">
-                                <form action="edit_client_profile.php" method="post">
+                                <form action="edit_client_profile.php" method="post" enctype="multipart/form-data">
                                     <input type="hidden" value="<?php echo $_GET['c_id'] ?>" name="c_id" />
+                                    <input type="hidden" name="c_photo" value="<?php echo $client_view[0]->photo;?>" >
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Name <span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input surnameInput" placeholder="name" name="c_name" value="<?php echo $client_view[0]->c_name;?>">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Contact No. <span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" maxlength="10" class="form-control border-input phoneInput" placeholder="Contact No." name="c_contact" value="<?php echo $client_view[0]->contact;?>">
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address <span class="required" style="color:red;"> * </span></label>
                                                 <input type="email" class="form-control border-input UserName_field" placeholder="Email" name="email" value="<?php echo $client_view[0]->email;?>">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Gender <span class="required" style="color:red;"> * </span></label>
                                             <div>
@@ -140,16 +136,13 @@ $packages_view = $packages->packages_view;
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Date of birth <span class="required" style="color:red;"> *   </span></label>
                                             <input type="date" class="form-control border-input"      name="DOB" value="<?php echo $client_view[0]->DOB;?>" required>
                                            </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Age<span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input phoneInput"  name="Age" value="<?php echo $client_view[0]->Age;?>" required>
@@ -158,29 +151,13 @@ $packages_view = $packages->packages_view;
                                     </div>
 
                                     <div class="row">
-                                         <div class="col-md-6">
+                                         <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Anniversary<span class="required" style="color:red;"> *   </span></label>
                                             <input type="date" class="form-control border-input"      name="Anniversary" value="<?php echo $client_view[0]->Anniversary;?>" required>
                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Address <span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="1" class="form-control border-input" name="c_address"><?php echo $client_view[0]->address;?>
-                                                </textarea>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="row">
-                                          <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Comments<span class="required" style="color:red;"> * </span></label>
-                                                <textarea rows="1" class="form-control border-input" name="Comments"><?php echo $client_view[0]->Comments;?>
-                                                </textarea>
-                                            </div>
-                                        </div> 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Lead By<span class="required" style="color:red;"> * </span></label>
                                             <div>
@@ -193,6 +170,28 @@ $packages_view = $packages->packages_view;
                                             </div>
                                         </div>
                                     </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Address <span class="required" style="color:red;"> * </span></label>
+                                                <textarea rows="1" class="form-control border-input" name="c_address"><?php echo $client_view[0]->address;?>
+                                                </textarea>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="row">
+                                          <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Comments<span class="required" style="color:red;"> * </span></label>
+                                                <textarea rows="1" class="form-control border-input" name="Comments"><?php echo $client_view[0]->Comments;?>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Profile Photo<span class="required" style="color:red;"> * </span></label>
+                                                <input type="file" class="form-control border-input" name="cpro_img" accept="image/*"  value="">
+                                            </div>
+                                        </div> 
                                     </div>
                                     <hr>
 

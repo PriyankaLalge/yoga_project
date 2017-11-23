@@ -134,7 +134,7 @@ $client_view = $client->client_view;
                                         if ($value->batch_id == $value1->batch_id){?>
                                             <tr><?php //print_r($value); ?>
                                                <td>1</td>
-                                                <td><a href="client_profile.php"><?php echo $value->c_name; ?></a></td>
+                                                <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name; ?></a></td>
                                                 <td><?php echo $value->contact; ?></td>
                                                 <td><?php echo $value1->batch_name; ?></td>
                                                 <td>Waiting</td>
