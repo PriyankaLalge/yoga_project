@@ -25,6 +25,18 @@ if(isset($_GET['e_ID'])){
     curl_close($ch);
 }
 if(isset($_POST['edit_emp'])){
+    if(empty($_FILES['pro_img']['name'])){
+        $photo1 = $_POST['e_photo'];
+    }
+    else{
+        $photo1 = $_FILES['pro_img'];
+    }
+    if(empty($_FILES['id_doc']['name'])){
+        $doc1 = $_POST['e_doc'];
+    }
+    else{
+        $doc1 = $_FILES['id_doc'];
+    }
     $data = array(
             'e_ID' => $_POST['e_ID'],
             'e_name' => $_POST['e_name'],
@@ -37,10 +49,10 @@ if(isset($_POST['edit_emp'])){
             'emp_reg' => $_POST['emp_reg'],
             'date_reg' => $_POST['date_reg'],
             'status' => $_POST['status'],
-             'id_doc' =>  $_FILES['id_doc'],
+             'id_doc' =>  $doc1,
             'address' => $_POST['address'],
             'comment' => $_POST['comment'],
-             'photo' => $_FILES['pro_img']
+             'photo' => $photo1
     );
     # Create a connection
     $url = 'http://localhost/yoga_project/Editapi/edit_employee_api.php';
@@ -105,6 +117,8 @@ if(isset($_POST['edit_emp'])){
                     <div class="content">
                         <form action="edit_employee_profile.php" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="e_ID" value="<?php echo $_GET['e_ID'];?>" >
+                            <input type="hidden" name="e_photo" value="<?php echo $employee_view[0]->photo;?>" >
+                            <input type="hidden" name="e_doc" value="<?php echo $employee_view[0]->id_doc;?>" >
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

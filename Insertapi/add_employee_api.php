@@ -25,26 +25,24 @@ if(isset($_POST['e_name'])  && isset($_POST['Gender'])  && isset($_POST['DOB']) 
     $comment = $_POST['comment'];
     $photo = $_POST['photo'];
     
-    $extension_1 = explode("/",$id_doc['type']);
-    $pro_url_1 = "../assets/empl_doc/$e_name$$contact.$extension_1[1]";
-    
-    $extension = explode("/",$photo['type']);
-    $pro_url = "../assets/empl_image/$e_name$$contact.$extension[1]";
-   /* $name = file_get_contents($photo['tmp_name']);
-    $extension = explode("/",$photo['type']);
-    file_put_contents("$e_name.$extension[1]",$name);    */          
-   $sql = "INSERT INTO `employee` (`e_name`, `Gender`, `DOB`, `contact`, `anniversary`, `Email`,`date_joint`, `emp_reg`,`date_reg`,`status`,`id_doc`, `address`, `comment`, `photo`) VALUES ('$e_name', '$Gender', '$DOB', '$contact', '$anniversary', '$Email', '$date_joint', '$emp_reg', '$date_reg', '$status', '$pro_url_1', '$address','$comment', '$pro_url')";
+    $sql = "INSERT INTO `employee` (`e_name`, `Gender`, `DOB`, `contact`, `anniversary`, `Email`,`date_joint`, `emp_reg`,`date_reg`,`status`, `address`, `comment`) VALUES ('$e_name', '$Gender', '$DOB', '$contact', '$anniversary', '$Email', '$date_joint', '$emp_reg', '$date_reg', '$status','$address','$comment')";
     
     if ($conn->query($sql) === TRUE) {
+        $last_id = $conn->insert_id;
+        $extension = explode("/",$photo['type']);
+        $pro_url = "../assets/empl_image/$last_id.$extension[1]";
         $name = file_get_contents($photo['tmp_name']);
-        //$extension = explode("/",$photo['type']);
-        file_put_contents("../assets/empl_image/$e_name$$contact.$extension[1]",$name);  
+        file_put_contents("../assets/empl_image/$last_id.$extension[1]",$name);  
         
-         $name_1 = file_get_contents($id_doc['tmp_name']);
-         file_put_contents("../assets/empl_doc/$e_name$$contact.$extension_1[1]",$name_1);
+        $extension_1 = explode("/",$id_doc['type']);
+        $pro_url_1 = "../assets/empl_doc/$last_id.$extension_1[1]";
+        $name_1 = file_get_contents($id_doc['tmp_name']);
+        file_put_contents("../assets/empl_doc/$last_id.$extension_1[1]",$name_1);
+        $sql1 = "UPDATE `employee` SET `id_doc`='$pro_url_1',`photo`='$pro_url' WHERE e_ID=$last_id";
+        $conn->query($sql1);
+            
         
-        
-          ?> 
+?> 
         <div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria- hidden="true">&times;</span></button>
             <strong>Success!</strong> Employee information added successfully!
