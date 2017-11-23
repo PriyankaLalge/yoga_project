@@ -1,26 +1,26 @@
 <?php 
 if(isset($_POST['submit'])){
     $data = array( 
-            'c_name' => $_POST['c_name'],
-         'c_contact' => $_POST['c_contact'],
-         'email' => $_POST['email'],
-         'gender' => $_POST['gender'],
-         'DOB' => $_POST['DOB'],
-         'Age' => $_POST['Age'],
-         'Anniversary' => $_POST['Anniversary'],
-         'c_address' => $_POST['c_address'],
-         'Comments' => $_POST['Comments'],
-         'Lead_By' => $_POST['Lead_By'],
-         'package' => $_POST['package'],
+        'c_name' => $_POST['c_name'],
+        'c_contact' => $_POST['c_contact'],
+        'email' => $_POST['email'],
+        'gender' => $_POST['gender'],
+        'DOB' => $_POST['DOB'],
+        'Age' => $_POST['Age'],
+        'Anniversary' => $_POST['Anniversary'],
+        'c_address' => $_POST['c_address'],
+        'Comments' => $_POST['Comments'],
+        'Lead_By' => $_POST['Lead_By'],
+        'package' => $_POST['package'],
         // $Register_ID = $_POST['Register_ID'];
-         'batch' => $_POST['batch'],
-         'startdate' => $_POST['startdate'],
-         'enddate' => $_POST['enddate'],
+        'batch' => $_POST['batch'],
+        'startdate' => $_POST['startdate'],
+        'enddate' => $_POST['enddate'],
          //$status_payment = $_POST['status_payment'];
-         'c_fees' => $_POST['c_fees'],
-         'Discount' => $_POST['Discount'],
-         'received' => $_POST['received'],
-         'balance' => $_POST['balance']
+        'c_fees' => $_POST['c_fees'],
+        'Discount' => $_POST['Discount'],
+        'received' => $_POST['received'],
+        'balance' => $_POST['balance']
         );
     $url = 'http://localhost/yoga_project/Insertapi/add_client_api.php';
     $ch = curl_init($url);
