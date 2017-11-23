@@ -37,10 +37,10 @@ if(isset($_POST['edit_emp'])){
             'emp_reg' => $_POST['emp_reg'],
             'date_reg' => $_POST['date_reg'],
             'status' => $_POST['status'],
-            'id_doc' => '$doc_url',
+             'id_doc' =>  $_FILES['id_doc'],
             'address' => $_POST['address'],
             'comment' => $_POST['comment'],
-            'photo' => 'photo'
+             'photo' => $_FILES['pro_img']
     );
     # Create a connection
     $url = 'http://localhost/yoga_project/Editapi/edit_employee_api.php';
@@ -103,7 +103,7 @@ if(isset($_POST['edit_emp'])){
                         <h4 class="title">Edit Employee</h4>
                     </div>
                     <div class="content">
-                        <form action="edit_employee_profile.php" method="POST">
+                        <form action="edit_employee_profile.php" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="e_ID" value="<?php echo $_GET['e_ID'];?>" >
                             <div class="row">
                                 <div class="col-md-4">
