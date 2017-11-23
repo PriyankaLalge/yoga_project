@@ -185,7 +185,7 @@ if(isset($_GET['e_ID'])){
                             <div class="header">
                                 <h4 class="title">Employee Details</h4>
                             </div>
-                              <input type="hidden" name="e_ID" value="<?php echo $_GET['e_ID'];?>" >
+                            <input type="hidden" name="e_ID" value="<?php echo $_GET['e_ID'];?>">
                             <div class="content">
                                 <ul class="list-unstyled team-members">
                                     <li>
@@ -289,13 +289,11 @@ if(isset($_GET['e_ID'])){
                                         </div>
                                     </li>-->
                                     <li>
-                                       
                                         <div class="row">
                                             <div class="col-xs-*"><br>
                                                 <center><a href="edit_employee_profile.php?e_ID=<?php echo $employee_view[0]->e_ID;?>"><button class="btn btn-success">Edit Profile</button></a></center>
                                             </div>
                                         </div>
-                                       
                                     </li>
                                </ul>
                             </div>

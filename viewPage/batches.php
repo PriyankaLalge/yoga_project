@@ -27,10 +27,12 @@ $batch_view = $batch->batch_view;
 //print_r($batch_view);
 ?> 
 <?php
-if (isset($_POST['submit'])){
+if (isset($_POST['submit']) && isset($_POST['batch_name']) && isset($_POST['batch_timing'])){
 $data=array(
 'batch_name'=>$_POST['batch_name'],
 'batch_timing'=>$_POST['batch_timing'],
+'name_of_batch'=>$_POST['name_of_batch'],
+'plan'=>$_POST['plan'],
 't_name'=>$_POST['t_name']
 );
      $url = 'http://localhost/yoga_project/Insertapi/add_batch_api.php';
@@ -46,11 +48,9 @@ $data=array(
         print_r($response);
     curl_close($ch); 
     
-    
 }
 ?>
-
-        <div class="content">
+    <div class="content">
             <div class="container-fluid">
                <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -70,7 +70,7 @@ $data=array(
                              <div class="col-md-4">
                                 <div class="form-group">
                                 <label>Name of the Batches<span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name=""  required>
+                                    <input type="text" class="form-control border-input UserName_field" name="name_of_batch"  required>
                                 </div>
                             </div>
                              <div class="col-md-4">
@@ -84,18 +84,16 @@ $data=array(
                              <div class="col-md-4">
                                  <div class="form-group">
                                      <label>Trainer<span class="required" style="color:red;"> * </span></label> 
-                                     <select name="t_name" class="form-control border-input" required>
-                                           <option >---------------Select---------------</option><?php foreach($employee_view as $value): {?>
-                                       
+                                     <select  name="t_name" class="form-control border-input" required>
+                                           <option name="t_name">---------------Select---------------</option><?php foreach($employee_view as $value): {?>
                                          <option name="t_name"><?php echo $value->e_name; ?></option><?php } endforeach;?>
                                      </select>
-                               
                                  </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Plan<span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name=""  required >
+                                    <input type="text" class="form-control border-input UserName_field" name="plan" required >
                                 </div>
                             </div>
                              <div class="col-md-2">
@@ -122,17 +120,17 @@ $data=array(
                                                 <h3 class="text-uppercase">Batch Details</h3>
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                     <form action="" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                    </h3>
-                                                </div>
+                                                <h3>
+                                                 <form action="" method="GET">
+                                                    <div class="input-group pull-right">
+                                                         <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                 </form>
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -148,16 +146,16 @@ $data=array(
                                                 <th style="font-weight:bold;">Trainer</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable"><?php $i=0;foreach($batch_view as $value):{?>
+                                        <tbody id="myTable"><?php $i=0;foreach($batch_view as $value):?>
                                             <tr>
                                                <td><?php $i++; echo $i; ?></td>
-                                                <td><a href=""><?php echo $value->batch_name;?></a></td>
-                                                <td>b1</td>
-                                                <td>Monthly</td>
+                                                <td><a href="edit_batches.php?batch_id=<?php echo $value->batch_id;?>"><?php echo $value->batch_name;?></a></td>
+                                                <td><?php echo $value->name_of_batch;?></td>
+                                                <td><?php echo $value->plan;?></td>
                                                 <td><?php echo $value->batch_timing;?></td> 
                                                 <td><?php echo $value->e_name;?></td>
-                                                 <td><a href="edit_batches.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
-                                            </tr><?php }endforeach;?>
+                                                 <td><a href="edit_batches.php?batch_id=<?php echo $value->batch_id; ?>"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                                            </tr><?php endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          

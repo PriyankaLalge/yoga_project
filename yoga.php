@@ -119,7 +119,9 @@ $sql5 = "CREATE TABLE batch (
 batch_id INT(11) AUTO_INCREMENT PRIMARY KEY, 
 batch_name VARCHAR(50) ,
 batch_timing VARCHAR(50),
-e_name VARCHAR(50)
+e_name VARCHAR(50),
+name_of_batch VARCHAR(50),
+plan VARCHAR(50)
 )";
 
 if ($conn->query($sql5) === TRUE) {
