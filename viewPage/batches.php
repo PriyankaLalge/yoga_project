@@ -179,7 +179,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;
