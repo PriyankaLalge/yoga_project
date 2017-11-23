@@ -34,11 +34,7 @@ if(isset($_POST['submit'])){
             'photo' => $_FILES['pro_img']
         );
    
-   /*print_r($_FILES['pro_img']);
-    $name1 = $_POST['e_name'];
-    $name = file_get_contents($_FILES['pro_img']['tmp_name']);
-    $extension = explode("/",$_FILES['pro_img']['type']);
-    file_put_contents("$name1.$extension[1]",$name);*/
+
     $url = 'http://localhost/yoga_project/Insertapi/add_employee_api.php';
     $ch = curl_init($url);
     # Form data string

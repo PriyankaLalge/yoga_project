@@ -1,9 +1,9 @@
 <?php 
-include 'config.php';                                   //connect to databasse
+require_once '../dbConfig/config.php';                                  //connect to databasse
 if(isset($_POST['batch_name']) && isset($_POST['batch_timing']) ){               //if batch name and batch time is                                                                                  submited then go in if condition
     $batch_name = $_POST['batch_name'];
     $batch_timing = $_POST['batch_timing'];
-    $e_name = $_POST['e_name'];
+    $e_name = $_POST['t_name'];
     $sql = "INSERT INTO batch (batch_name, batch_timing, e_name) 
         VALUES ('$batch_name', '$batch_timing', '$e_name')";            // insert into batch table if batch name and batch                                                                 time is set
      if ($conn->query($sql) === TRUE) {                       // if query is connected then print as success and go                                                                     in next loop
