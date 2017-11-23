@@ -193,7 +193,7 @@ $packages_view = $packages->packages_view;
                                         <td><?php echo $value->Time?></td> 
                                         <td><?php echo $value->batch?></td>
                                         <td><?php echo $value->fee?></td> 
-                                         <td><a href="edit_packages.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                                         <td><a href="edit_packages.php?pack_ID=<?php echo $value->Cat_ID; ?>"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                     </tr>
                                       <?php endforeach; ?>
                                 </tbody>
