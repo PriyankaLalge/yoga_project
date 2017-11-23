@@ -31,10 +31,6 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
 $packages = json_decode($content);
 $packages_view = $packages->packages_view;
-<<<<<<< HEAD
-//print_r($packages_view);
-=======
->>>>>>> 3d21e097460c3149e8961b4b11840d247680c1aa
 ?>
 <!--database connection-->
 
