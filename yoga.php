@@ -131,7 +131,6 @@ if ($conn->query($sql5) === TRUE) {
 $sql6 = "CREATE TABLE client (
 c_ID INT(11)  AUTO_INCREMENT PRIMARY KEY, 
 c_name VARCHAR(50) ,
-c_surname VARCHAR(50) ,
 gender VARCHAR(50) ,
 DOB VARCHAR(50) ,
 Anniversary VARCHAR(50) ,
@@ -140,6 +139,7 @@ address VARCHAR(100) ,
 contact VARCHAR(50) ,
 fees VARCHAR(50) ,
 received VARCHAR(50) ,
+discount VARCHAR(50) ,
 balance VARCHAR(50) ,
 package VARCHAR(50) ,
 startdate VARCHAR(50) ,
@@ -148,7 +148,6 @@ email VARCHAR(50) ,
 Lead_By VARCHAR(50) ,
 photo VARCHAR(50) ,
 Comments VARCHAR(50) ,
-status_payment VARCHAR(50),
 batch_id INT(11)
 )";
 

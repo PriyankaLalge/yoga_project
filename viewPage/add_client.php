@@ -1,3 +1,60 @@
+<?php 
+if(isset($_POST['submit'])){
+    $data = array( 
+            'c_name' => $_POST['c_name'],
+         'c_contact' => $_POST['c_contact'],
+         'email' => $_POST['email'],
+         'gender' => $_POST['gender'],
+         'DOB' => $_POST['DOB'],
+         'Age' => $_POST['Age'],
+         'Anniversary' => $_POST['Anniversary'],
+         'c_address' => $_POST['c_address'],
+         'Comments' => $_POST['Comments'],
+         'Lead_By' => $_POST['Lead_By'],
+         'package' => $_POST['package'],
+        // $Register_ID = $_POST['Register_ID'];
+         'batch' => $_POST['batch'],
+         'startdate' => $_POST['startdate'],
+         'enddate' => $_POST['enddate'],
+         //$status_payment = $_POST['status_payment'];
+         'c_fees' => $_POST['c_fees'],
+         'Discount' => $_POST['Discount'],
+         'received' => $_POST['received'],
+         'balance' => $_POST['balance']
+        );
+    $url = 'http://localhost/yoga_project/Insertapi/add_client_api.php';
+    $ch = curl_init($url);
+    # Form data string
+    $postString = http_build_query($data, '', '&');
+    # Setting our options
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    # Get the response
+    $response = curl_exec($ch);
+    curl_close($ch);    
+}
+?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_batch_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$batch = json_decode($content);
+$batch_view = $batch->batch_view;
+?>
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_packages_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$packages = json_decode($content);
+$packages_view = $packages->packages_view;
+?>
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
@@ -5,6 +62,7 @@
 
 <div class="content">
     <div class="container-fluid">
+        <?php if(isset($_POST['submit'])){ print_r($response); }?>
       <div class="row">
         <div class="col-lg-3 col-sm-6">
                 <div class="card">
@@ -31,34 +89,6 @@
                     </div>
                 </div>
             </div>
-
-<!--
-          <div class="col-lg-3 col-sm-6">
-                <div class="card">
-                    <div class="content">
-                        <div class="row">
-                            <div class="col-xs-5">
-                                <div class="icon-big icon-success text-center">
-                                  <i class="fa fa-users" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-7">
-                                <div class="numbers">
-                                  <a href="clients.php"><p>Client</p></a> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <hr />
-                            <div class="stats">
-                                 <a href="client_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Client Profile</a> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
--->
-
         </div>
 
         <div class="row">
@@ -68,7 +98,7 @@
                         <h4 class="title">Add Client</h4>
                     </div>
                     <div class="content">
-                        <form action="add_client_api.php" method="post">
+                        <form action="add_client.php" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -163,8 +193,9 @@
                                     <div>
                                         <select  class="form-control student_admission border-input"  name="package" required>
                                             <option >---------------Select---------------</option>
-                                            <option  name="package" value="regularcourse">rakesh</option>
-                                            <option  name="package" value="crashcourse">Mahesh</option>  
+                                            <?php foreach($packages_view as $package): ?>
+                                            <option  name="package" value="<?php echo $package->Cat_ID; ?>"><?php echo $package->Category; ?></option>
+                                            <?php endforeach; ?> 
                                         </select>
                                     </div>
                                 </div>
@@ -175,8 +206,9 @@
                                     <div>
                                         <select  class="form-control student_admission border-input" name="batch" required>
                                             <option value="">---------------Select---------------</option>
-                                            <option name="batch" value="regularcourse">rakesh</option>
-                                            <option name="batch" value="crashcourse">Mahesh</option>  
+                                            <?php foreach($batch_view as $batch): ?>
+                                            <option name="batch" value="<?php echo $batch->batch_id; ?>"><?php echo $batch->batch_name; ?></option>
+                                            <?php endforeach; ?> 
                                         </select>
                                     </div>
                                 </div>
@@ -226,7 +258,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                <input type="submit" name="submit" class="btn btn-info btn-fill btn-wd">
                             </div>
                             <div class="clearfix"></div>
                         </form>

@@ -6,30 +6,30 @@ if(!empty($_SESSION)){*/
 <?php  
 # Create a connection
 $ch = curl_init();
-curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_batch_api.php');
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_batch_api.php');
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 # Get the response
 $content = curl_exec($ch);
 $batch = json_decode($content);
 $batch_view = $batch->batch_view;
-            if(isset($_POST['submit']))
-            { 
-                if(isset($_POST['batch']))
-                {
-                    $data =array('batch'=>$_POST['batch']);
-                }
-            }
+if(isset($_POST['submit']))
+{ 
+    if(isset($_POST['batch']))
+    {
+        $data =array('batch'=>$_POST['batch']);
+    }
+}
 ?>
 <?php  
 # Create a connection
 $ch = curl_init();
-curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_client_api.php');
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_client_api.php');
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 # Get the response
 $content = curl_exec($ch);
 $client = json_decode($content);
 $client_view = $client->client_view;
-  //print_r($client_view);
+ // print_r($client_view);
 ?>	   
 
 <?php require_once 'header.php'; ?>
@@ -134,10 +134,10 @@ $client_view = $client->client_view;
                                         if ($value->batch_id == $value1->batch_id){?>
                                             <tr><?php //print_r($value); ?>
                                                <td>1</td>
-                                                <td><a href="client_profile.php">priyanka</a></td>
-                                                <td>235346456</td>
-                                                <td>b1</td>
-                                                <td>paid</td>
+                                                <td><a href="client_profile.php"><?php echo $value->c_name; ?></a></td>
+                                                <td><?php echo $value->contact; ?></td>
+                                                <td><?php echo $value1->batch_name; ?></td>
+                                                <td>Waiting</td>
                                                 <td><a href="edit_client_profile.php"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                             </tr><?php }endforeach;?><?php endforeach;?>
 
