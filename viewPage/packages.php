@@ -10,17 +10,17 @@ if(($_SESSION['permission']!='operator') && ($_SESSION['permission']!='user')){*
  
 
 <!--api for view batch detail while adding new packages-->
-<!--<?php  
+<?php  
 # Create a connection
 $ch = curl_init();
-curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/view_batch_api.php');
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_batch_api.php');
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 # Get the response
 $content = curl_exec($ch);
 $batch = json_decode($content);
 $batch_view = $batch->batch_view;
 //$batch_view = $batch->batch_view;
-?>-->
+?>
 
 <?php  
 # Create a connection
@@ -112,8 +112,9 @@ $packages_view = $packages->packages_view;
                              <label>Select Batch<span class="required" style="color:red;"> * </span></label> 
                              <select name="batch" class="form-control border-input" required>
                                  <option >---------------Select---------------</option>
-                                 <option name="batch" value="followdate">fgutyu</option>
-                                 <option name="batch" value="followdate">fgutyu</option>
+                                 <?php foreach($batch_view as $value_1): ?>
+                                 <option name="batch" value="<?php echo $value_1->batch_name; ?>"><?php echo $value_1->batch_name; ?></option>
+                              <?php endforeach;?>
                              </select>
                          </div>
                     </div>
@@ -217,7 +218,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;

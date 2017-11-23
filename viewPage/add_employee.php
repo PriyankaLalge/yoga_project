@@ -207,40 +207,6 @@ if(isset($_POST['submit'])){
      <?php require_once 'footer.php'; ?>
   <?php require_once 'script_include.php'; ?>
 
- <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" >
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content upload_img ">
-        <div class="modal-header ">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Uploaded File</h4>
-        </div>
-        <div class="modal-body upload_img">
-            <!--<img alt="No File Found" id = "imageUpload" />-->
-            <iframe alt="No File Found" id = "imageUpload" ></iframe>
-         </div>
-        <div class="modal-footer ">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<script>
-    function uploadFunction(imgvalue){ 
-        var img =  <?php echo json_encode(base_url()); ?>; 
-        var imageSrc = img + imgvalue;
-        var input = document.getElementById('imageUpload');
-        input.src = imageSrc;
-    }
-</script>
-<style> 
-    .modal-dialog{text-align:center;}
-    .modal-content{display:inline-block;}
-    #imageUpload{
-        width:600px;
-        height:300px;
-    }  
-
 <?php
 /*} 
   else{  

@@ -87,23 +87,18 @@
 });
    
     
-    
-//    $(".UserName_field").on({
-//  keydown: function(e) {
-//    if (e.which === 32)
-//      return false;
-//  },
-//  change: function() {
-//    this.value = this.value.replace(/\s/g, "");
-//  }
-//});
-//   
-    
-//    $('.UserName_field').keypress(function(key) {
-//
-//     if (key.which === 32 && !this.value.length){
-//          key.preventDefault();
-//     }
-//});
+ function calc_balance() {
+     
+     
+            var total_fees = parseInt(document.getElementById("total_fees").value);
+            var discount = parseInt(document.getElementById("discount").value);
+            var recieved = parseInt(document.getElementById("recieved").value);
+            var total =  total_fees - discount - recieved;
+     if (isNaN(total)){
+                 total = 0;
+             }
+            document.getElementById("balance").value = total;
+     
+        }
 </script>
 </html>

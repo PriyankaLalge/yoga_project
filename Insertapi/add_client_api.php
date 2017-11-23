@@ -22,10 +22,20 @@ require_once '../dbConfig/config.php';           //connect to database
      $Discount = $_POST['Discount'];
      $received = $_POST['received'];
      $balance = $_POST['balance'];
+    $photo = $_POST['photo'];
     
     $sql = "INSERT INTO `client`(`c_name`, `gender`, `DOB`, `Anniversary`, `Age`, `address`, `contact`, `fees`, `received`, `balance`, `package`, `startdate`, `enddate`, `email`, `Lead_By`, `Comments`, `batch_id`, `discount`) VALUES ('$c_name','$gender','$DOB','$Anniversary','$Age','$c_address','$c_contact','$c_fees','$received','$balance','$package','$startdate','$enddate','$email','$Lead_By','$Comments','$batch','$Discount')";
                                                            // query to database for insert data in      client table
-    if ($conn->query($sql) === TRUE) {              // checked does query connect ? if it connected then execute                                                        next loop and print successfull
+    if ($conn->query($sql) === TRUE) {     
+       $last_id = $conn->insert_id;
+        $extension = explode("/",$photo['type']);
+        $pro_url = "../assets/client_image/$last_id.$extension[1]";
+        $name = file_get_contents($photo['tmp_name']);
+        file_put_contents("../assets/client_image/$last_id.$extension[1]",$name);  
+       
+        $sql1 = "UPDATE `client` SET `photo`='$pro_url' WHERE c_ID=$last_id";
+        $conn->query($sql1);
+            
         ?> 
 <div class="alert alert-success" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria- hidden="true">&times;</span></button>

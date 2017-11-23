@@ -6,7 +6,7 @@ loc no 11-- // query to database for SELECT in batch_ID table
 loc no 18--//  0 result
 */
 require_once '../dbConfig/config.php';
-   $sql = "SELECT * FROM `packages` ORDER By Cat_ID";
+   $sql = "SELECT * FROM `packages` ORDER By Cat_ID DESC";
     $result=$conn->query($sql);
     $packages=array();
     if ($result->num_rows >0){
