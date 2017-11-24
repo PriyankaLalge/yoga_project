@@ -97,7 +97,7 @@ $enquiry_view_1 = $enquiry->enquiry_view;
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Username</a></li>
-                                <li><a href="#">Sign Out</a></li>
+                                <li><a href="../">Sign Out</a></li>
                                 
                               </ul>
                         </li>
