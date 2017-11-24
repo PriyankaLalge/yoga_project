@@ -64,7 +64,7 @@ $enquiry_view_1 = $enquiry->enquiry_view;
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
-									<p>Notifications</p>
+									<p>Enquiry</p>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
