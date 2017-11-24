@@ -10,7 +10,7 @@ if(isset($_GET['e_ID'])){
         'e_ID' => $_GET['e_ID'],
     );
     # Create a connection
-    $url = 'http://localhost/yoga_project/Viewapi/view_employee_api.php';
+    $url = 'http://localhost/yoga_project/Viewapi/view_employee_profile_api.php';
     $ch = curl_init($url);
     # Form data string
     $postString = http_build_query($data, '', '&');
@@ -32,32 +32,7 @@ if(isset($_GET['e_ID'])){
 
         <div class="content">
             <div class="container-fluid">
-                
                 <div class="row">
-                     <!--<div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                          <i class="fa fa-user" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                              <div class="content">
@@ -130,9 +105,7 @@ if(isset($_GET['e_ID'])){
                             </div>
                         </div>
                     </div>
-               <!-- </div>
-                
-                <div class="row">-->
+              
                  <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content">
@@ -179,7 +152,6 @@ if(isset($_GET['e_ID'])){
 
                         </div>
                     </div>
- <!--           Array ( [e_ID] => 12 [e_name] => ganesh [Gender] => male [DOB] => 2017-11-11 [contact] => 234 [anniversary] => 2017-11-20 [Email] => asd@ad.df [date_joint] => 2017-11-04 [emp_reg] => sdf [date_reg] => 2017-11-04 [id_doc] => assets/empl_doc/ganesh12.pdf [address] => sdf [comment] => sdf [photo] => assets/empl_image/ganesh12.jpg ) -->     
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="header">
@@ -276,18 +248,6 @@ if(isset($_GET['e_ID'])){
                                             </div>
                                         </div>
                                     </li>
-                                <!--    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                               ID Documents
-                                                <br>
-                                            </div>
-                                            
-                                            <div class="col-xs-6">
-                                                <b><?php echo $row['id_doc']; ?></b>
-                                            </div>
-                                        </div>
-                                    </li>-->
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-*"><br>

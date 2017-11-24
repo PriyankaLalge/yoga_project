@@ -8,6 +8,7 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
 $enquiry = json_decode($content);
 $enquiry_view_1 = $enquiry->enquiry_view;
+$enq_count = $enquiry->count1;
 ?> 
 <div class="main-panel">
         <nav class="navbar navbar-default">
@@ -64,7 +65,34 @@ $enquiry_view_1 = $enquiry->enquiry_view;
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
-									<p>Enquiry</p>
+									<p>1</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr style="font-weight:bold;" class="header font_tr">
+                                                <th style="font-weight:bold;">Name</th>
+                                                <th style="font-weight:bold;">Mobile</th> 
+                                                <th style="font-weight:bold;">FollowUp</th>
+                                                <th style="font-weight:bold;">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable"><?php $i=0;foreach($enquiry_view_1 as $value): { ?>
+                                            <tr>
+                                                <td><a href=""><?php echo $value->fullName; ?></a></td>
+                                                <td><?php echo $value->contNo;?></td>
+                                                <td><?php echo $value->followDate; ?></td>
+                                                <td><?php echo $value->Comment; ?></td>
+                                            </tr><?php }endforeach;?>
+                                        </tbody>
+                                    </table> 
+                              </ul>
+                        </li> 
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
+									<p><?php echo $enq_count; ?></p>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
