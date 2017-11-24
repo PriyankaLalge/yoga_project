@@ -1,3 +1,14 @@
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_notify_follow_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$enquiry = json_decode($content);
+$enquiry_view = $enquiry->enquiry_view;
+?> 
+
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=9;require_once 'sidebar.php'; ?>
@@ -5,7 +16,6 @@
 
         <div class="content">
             <div class="container-fluid">
-                
                 <div class="row">
                      <div class="col-lg-3 col-sm-6">
                         <div class="card">
@@ -145,17 +155,16 @@
                                                 <th style="font-weight:bold;">Comments</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable">
+                                        <tbody id="myTable"><?php $i=0;foreach($enquiry_view as $value):  ?>
                                             <tr>
-                                               <td>1</td>
-                                                  <td>11-11-17</td>
-                                                <td>17-4-29</td>
-                                                <td><a href="">priyanka</a></td>
-                                                <td>lalge@gmail.com</td>
-                                                <td>monthly</td> 
-                                                <td>364567575</td>
-                                                <td>dryftyjyukyu</td>
-                                            </tr>
+                                               <td><?php $i++; echo $i;?></td>
+                                                  <td><?php echo $value->enqDate;?></td>
+                                                <td><?php echo $value->followDate;?></td>
+                                                <td><a href=""><?php echo $value->fullName;?></a></td>
+                                                <td><?php echo $value->enqEmail;?></td>
+                                                <td><?php echo $value->contNo;?></td> 
+                                                <td><?php echo $value->Comment;?></td>
+                                            </tr><?php endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          
@@ -176,7 +185,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;

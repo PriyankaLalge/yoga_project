@@ -1,3 +1,16 @@
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_birth_anni_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$client_emplye = json_decode($content);
+$client_view = $client_emplye->client_view;
+$employee_view = $client_emplye->employee_view;
+?>	   
+
+
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=9;require_once 'sidebar.php'; ?>
@@ -5,7 +18,6 @@
 
         <div class="content">
             <div class="container-fluid">
-                
                 <div class="row">
                      <div class="col-lg-3 col-sm-6">
                         <div class="card">
@@ -142,19 +154,48 @@
                                                 <th style="font-weight:bold;">Mobile</th>
                                                 <th style="font-weight:bold;">Gender</th>
                                                 <th style="font-weight:bold;">Date of birth</th> 
-                                                <th style="font-weight:bold;">Anniversary</th>
+                                                <th style="font-weight:bold;">Anniversary</th> 
+                                                <th style="font-weight:bold;">Client/Employee</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable">
+                                        <tbody id="myTable"><?php $i=0;foreach($client_view as $value):  ?>
                                             <tr>
-                                               <td>1</td>
-                                                 <td><a href="">priyanka</a></td>
-                                                <td>lalge@gmail.com</td>
-                                                <td>364567575</td>
-                                                <td>Female</td>
-                                                <td>11-22-234</td>
-                                                <td>11-33-17</td>
-                                            </tr>
+                                               <td><?php $i++; echo $i;?></td>
+                                                 <td><a href=""><?php echo $value->c_name;?></a></td>
+                                                <td><?php echo $value->email;?></td>
+                                                <td><?php echo $value->contact;?></td>
+                                                <td><?php echo $value->gender;?></td>
+                                                <?php if($value->DOB == date('Y-m-d')){ ?>
+                                                <td><font color="#db0e0e"><?php echo $value->DOB;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><?php echo $value->DOB;?></td> 
+                                                <?php } ?>
+                                                <?php if($value->Anniversary == date('Y-m-d')){ ?>
+                                                <td><font color="#4eac07"><?php echo $value->Anniversary;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><?php echo $value->Anniversary;?></td> 
+                                                <?php } ?>
+                                                <td>Client</td>
+                                            </tr><?php endforeach;?>
+                                            <?php $i=0;foreach($employee_view as $value_1):  ?>
+                                            <tr>
+                                                <td><?php $i++; echo $i;?></td>
+                                                 <td><a href=""><?php echo $value_1->e_name;?></a></td>
+                                                <td><?php echo $value_1->Email;?></td>
+                                                <td><?php echo $value_1->contact;?></td>
+                                                <td><?php echo $value_1->Gender;?></td>
+                                                 <?php if($value_1->DOB == date('Y-m-d')){ ?>
+                                                <td><font color="#db0e0e"><?php echo $value_1->DOB;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><?php echo $value_1->DOB;?></td> 
+                                                <?php } ?>
+                                                <?php if($value_1->anniversary == date('Y-m-d')){ ?>
+                                                <td><font color="#4eac07"><?php echo $value_1->anniversary;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><?php echo $value_1->anniversary;?></td> 
+                                                <?php } ?>
+                                                <td>Employee</td>
+                                            </tr><?php endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          
@@ -175,7 +216,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;

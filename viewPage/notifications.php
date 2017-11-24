@@ -1,3 +1,15 @@
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_pack_renw_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content = curl_exec($ch);
+$client = json_decode($content);
+$client_view = $client->client_view;
+ // print_r($client_view);
+?>	   
+
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=9;require_once 'sidebar.php'; ?>
@@ -5,7 +17,6 @@
 
         <div class="content">
             <div class="container-fluid">
-                
                 <div class="row">
                      <div class="col-lg-3 col-sm-6">
                         <div class="card">
@@ -146,16 +157,16 @@
                                                
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable">
+                                        <tbody id="myTable"><?php $i=0;foreach($client_view as $value):  ?>
                                             <tr>
-                                               <td>1</td>
-                                                <td><a href="">priyanka</a></td>
-                                                <td>lalge@gmail.com</td>
-                                                <td>monthly</td> 
-                                                <td>364567575</td>
-                                                <td>11-11-17</td>
-                                                <td>17-4-29</td>
-                                            </tr>
+                                               <td><?php $i++; echo $i;?></td>
+                                                <td><a href=""><?php echo $value->c_name;?></a></td>
+                                                <td><?php echo $value->email;?></td>
+                                                <td><?php echo $value->contact;?></td> 
+                                                <td><?php echo $value->package;?></td>
+                                                <td><?php echo $value->startdate;?></td>
+                                                <td><?php echo $value->enddate;?></td>
+                                            </tr><?php endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          
@@ -176,7 +187,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;

@@ -25,7 +25,6 @@ $client_view = $client->client_view;
 <?php require_once 'custome_style.php'; ?>
 <?php $page=1;require_once 'sidebar.php'; ?>
 <?php $nav=1;require_once 'nav.php'; ?>
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
