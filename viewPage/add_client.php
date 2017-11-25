@@ -58,6 +58,7 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
 $content = curl_exec($ch);
 $packages = json_decode($content);
 $packages_view = $packages->packages_view;
+//print_r($packages_view);
 ?>
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
@@ -160,13 +161,9 @@ $packages_view = $packages->packages_view;
                                 </div>
                                  <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Lead By<span class="required" style="color:red;"> * </span></label>
-                                    <div>
-                                        <select  class="form-control student_admission border-input"  name="Lead_By" required>
-                                            <option name="Lead_By">---------Select---------</option>
-                                            <option name="Lead_By" value="regularcourse">rakesh</option>
-                                            <option name="Lead_By" value="crashcourse">Mahesh</option>  
-                                        </select>
+                                    <label>Lead By</label>
+                                    <div>    
+                                     <input type="text" class="form-control border-input surnameInput" placeholder="Lead by" name="Lead_By" > 
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +200,7 @@ $packages_view = $packages->packages_view;
                                         <select  class="form-control student_admission border-input"  name="package" required>
                                             <option >---------------Select---------------</option>
                                             <?php foreach($packages_view as $package): ?>
-                                            <option  name="package" value="<?php echo $package->Cat_ID; ?>"><?php echo $package->Category; ?></option>
+                                            <option  name="package" value="<?php echo $package->Name_of_package; ?>"><?php echo $package->Category; ?></option>
                                             <?php endforeach; ?> 
                                         </select>
                                     </div>
@@ -248,7 +245,7 @@ $packages_view = $packages->packages_view;
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Discount<span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" id="discount" class="form-control border-input phoneInput" placeholder="Contact No." name="Discount" >
+                                        <input type="text" id="discount" class="form-control border-input phoneInput" placeholder="Discount" name="Discount" >
                                     </div>
                                 </div>
                                  <div class="col-md-4">
@@ -262,7 +259,7 @@ $packages_view = $packages->packages_view;
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Balance<span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" id="balance" onfocus="calc_balance()" class="form-control border-input phoneInput" placeholder="Contact No." name="balance" >
+                                        <input type="text" id="balance" onfocus="calc_balance()" class="form-control border-input phoneInput" placeholder="Balance" name="balance" >
                                     </div>
                                 </div>
                                 <div class="col-md-4">

@@ -104,7 +104,7 @@ $packages_view = $packages->packages_view;
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Time<span class="required" style="color:red;"> * </span></label>
-                            <input type="text" class="form-control border-input UserName_field" name="Time" required >
+                            <input type="time" class="form-control border-input UserName_field" name="Time" required >
                         </div>
                     </div> 
                      <div class="col-md-4">

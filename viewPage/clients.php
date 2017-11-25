@@ -104,17 +104,17 @@ $client_view = $client->client_view;
                                                 <h3 class="text-uppercase">Client Details</h3>
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                     <form action="" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                    </h3>
-                                                </div>
+                                                <h3>
+                                                 <form action="" method="GET">
+                                                    <div class="input-group pull-right">
+                                                         <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="search">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                 </form>
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
