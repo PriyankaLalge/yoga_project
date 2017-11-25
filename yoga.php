@@ -150,7 +150,8 @@ email VARCHAR(50) ,
 Lead_By VARCHAR(50) ,
 photo VARCHAR(50) ,
 Comments VARCHAR(50) ,
-batch_id INT(11)
+batch_id INT(11),
+fee_rem_date VARCHAR(50)
 )";
 
 if ($conn->query($sql6) === TRUE) {
