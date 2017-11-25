@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
          'Discount' => $_POST['Discount'],
          'received' => $_POST['received'],
          'balance' => $_POST['balance'],
+         'fee_rem_date' => $_POST['fee_rem_date'],
          'photo' => $_FILES['cpro_img']
 
         );
@@ -234,31 +235,37 @@ $packages_view = $packages->packages_view;
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         <input type="text" class="form-control border-input phoneInput" placeholder="Fees" id="total_fees" name="c_fees" >
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Discount<span class="required" style="color:red;"> * </span></label>
                                         <input type="text" id="discount" class="form-control border-input phoneInput" placeholder="Discount" name="Discount" >
+                                    </div>
+                                </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Recieved<span class="required" style="color:red;"> * </span></label>
+                                        <input type="text" id="recieved" class="form-control border-input phoneInput" placeholder="received fees" name="received" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Recieved<span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" id="recieved" class="form-control border-input phoneInput" placeholder="received fees" name="received" >
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label>Balance<span class="required" style="color:red;"> * </span></label>
                                         <input type="text" id="balance" onfocus="calc_balance()" class="form-control border-input phoneInput" placeholder="Balance" name="balance" >
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Fees Reminder Date <span class="required" style="color:red;"> *   </span></label>
+                                    <input type="date" class="form-control border-input "  name="fee_rem_date" required>
+                                   </div>
                                 </div>
                             </div>
                             <div class="text-center">

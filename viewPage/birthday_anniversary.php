@@ -161,7 +161,7 @@ $employee_view = $client_emplye->employee_view;
                                         <tbody id="myTable"><?php $i=0;foreach($client_view as $value):  ?>
                                             <tr>
                                                <td><?php $i++; echo $i;?></td>
-                                                 <td><a href=""><?php echo $value->c_name;?></a></td>
+                                                 <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name;?></a></td>
                                                 <td><?php echo $value->email;?></td>
                                                 <td><?php echo $value->contact;?></td>
                                                 <td><?php echo $value->gender;?></td>
@@ -180,7 +180,7 @@ $employee_view = $client_emplye->employee_view;
                                             <?php $i=0;foreach($employee_view as $value_1):  ?>
                                             <tr>
                                                 <td><?php $i++; echo $i;?></td>
-                                                 <td><a href=""><?php echo $value_1->e_name;?></a></td>
+                                                 <td><a href="employee_profile.php?e_ID=<?php echo $value_1->e_ID; ?>"><?php echo $value_1->e_name;?></a></td>
                                                 <td><?php echo $value_1->Email;?></td>
                                                 <td><?php echo $value_1->contact;?></td>
                                                 <td><?php echo $value_1->Gender;?></td>

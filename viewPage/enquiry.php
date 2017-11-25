@@ -164,7 +164,7 @@ $enquiry_view = $enquiry->enquiry_view;
                                         <tbody id="myTable"><?php $i=0;foreach($enquiry_view as $value): { ?>
                                             <tr>
                                                <td><?php $i++; echo $i;?></td>
-                                                <td><a href=""><?php echo $value->fullName; ?></a></td>
+                                                <td><?php echo $value->fullName; ?></td>
                                                 <td><?php echo $value->enqEmail; ?></td>
                                                 <td><?php echo $value->contNo;?></td>
                                                 <td><?php echo $value->enqDate; ?></td> 

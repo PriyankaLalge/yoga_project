@@ -35,7 +35,21 @@ $content = curl_exec($ch);
 $client = json_decode($content);
 $client_view_1 = $client->client_view;
  $pack_renw_count = $client->count2;
+?>	
+
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_notify_fee_remd_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content2 = curl_exec($ch);
+$client2 = json_decode($content2);
+$client_view_3 = $client2->client_view;
+$fee_remd_count = $client2->count_3;
+ // print_r($client_view);
 ?>	   
+
 <div class="main-panel">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -88,10 +102,35 @@ $client_view_1 = $client->client_view;
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                     <i class="fa fa-money fa-lg" aria-hidden="true"></i>
+									<span class="badge"><?php echo $fee_remd_count; ?></span>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <table class="table table-striped table-bordered"  >
+                                        <thead>
+                                            <tr style="font-weight:bold;" class="header font_tr">
+                                                 <th style="font-weight:bold;">Fee_Reminder</th>
+                                                <th style="font-weight:bold;">Name</th>
+                                                <th style="font-weight:bold;">Fee_Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable"><?php $i=0;foreach($client_view_3 as $value): { ?>
+                                            <tr>
+                                               <td><?php echo $value->fee_rem_date;?></td>
+                                                <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name;?></a></td>
+                                                <td><?php echo $value->balance;?></td>
+                                            </tr><?php }endforeach;?>
+                                        </tbody>
+                                    </table> 
+                            </ul>
+                        </li> 
                          <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-birthday-cake" aria-hidden="true"></i>
-									<p><?php echo $count_final; ?></p>
+                                <i class="fa fa-birthday-cake fa-lg" aria-hidden="true"></i>
+									<span class="badge"><?php echo $count_final; ?></span>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
@@ -142,8 +181,8 @@ $client_view_1 = $client->client_view;
                         </li> 
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                     <i class="fa fa-database" aria-hidden="true"></i>
-									<p><?php echo $pack_renw_count; ?></p>
+                                     <i class="fa fa-database fa-lg" aria-hidden="true"></i>
+									<span class="badge"><?php echo $pack_renw_count; ?></span>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
@@ -169,8 +208,8 @@ $client_view_1 = $client->client_view;
                         </li> 
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
-									<p><?php echo $enq_count; ?></p>
+                                    <i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i>
+									<span class="badge"><?php echo $enq_count; ?></span>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
@@ -185,8 +224,8 @@ $client_view_1 = $client->client_view;
                                         </thead>
                                         <tbody id="myTable"><?php $i=0;foreach($enquiry_view_1 as $value):  ?>
                                             <tr>
-                                                <td><a href=""><?php echo $value->fullName; ?></a></td>
-                                                <td><?php echo $value->contNo;?></td>
+                                                <td><?php echo $value->fullName; ?></td>
+                                                 <td><?php echo $value->contNo;?></td>
                                                 <td><?php echo $value->followDate; ?></td>
                                                 <td><?php echo $value->Comment; ?></td>
                                             </tr><?php endforeach;?>
@@ -197,7 +236,7 @@ $client_view_1 = $client->client_view;
                         
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                  <i class="fa fa-user" aria-hidden="true"></i>
+                                  <i class="fa fa-user fa-lg" aria-hidden="true"></i>
 									<p>Profile</p>
 									<b class="caret"></b>
                               </a>

@@ -22,9 +22,10 @@ require_once '../dbConfig/config.php';           //connect to database
      $Discount = $_POST['Discount'];
      $received = $_POST['received'];
      $balance = $_POST['balance'];
+     $fee_rem_date = $_POST['fee_rem_date'];
     $photo = $_POST['photo'];
     
-    $sql = "INSERT INTO `client`(`c_name`, `gender`, `DOB`, `Anniversary`, `Age`, `address`, `contact`, `fees`, `received`, `balance`, `package`, `startdate`, `enddate`, `email`, `Lead_By`, `Comments`, `batch_id`, `discount`) VALUES ('$c_name','$gender','$DOB','$Anniversary','$Age','$c_address','$c_contact','$c_fees','$received','$balance','$package','$startdate','$enddate','$email','$Lead_By','$Comments','$batch','$Discount')";
+    $sql = "INSERT INTO `client`(`c_name`, `gender`, `DOB`, `Anniversary`, `Age`, `address`, `contact`, `fees`, `received`, `balance`, `package`, `startdate`, `enddate`, `email`, `Lead_By`, `Comments`, `batch_id`, `discount`, `fee_rem_date`) VALUES ('$c_name','$gender','$DOB','$Anniversary','$Age','$c_address','$c_contact','$c_fees','$received','$balance','$package','$startdate','$enddate','$email','$Lead_By','$Comments','$batch','$Discount','$fee_rem_date')";
                                                            // query to database for insert data in      client table
     if ($conn->query($sql) === TRUE) {     
        $last_id = $conn->insert_id;

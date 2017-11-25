@@ -160,7 +160,7 @@ $enquiry_view = $enquiry->enquiry_view;
                                                <td><?php $i++; echo $i;?></td>
                                                   <td><?php echo $value->enqDate;?></td>
                                                 <td><?php echo $value->followDate;?></td>
-                                                <td><a href=""><?php echo $value->fullName;?></a></td>
+                                                <td><?php echo $value->fullName;?></td>
                                                 <td><?php echo $value->enqEmail;?></td>
                                                 <td><?php echo $value->contNo;?></td> 
                                                 <td><?php echo $value->Comment;?></td>
