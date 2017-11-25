@@ -116,6 +116,7 @@ $fee_remd_count = $client2->count_3;
                                                  <th style="font-weight:bold;">Fee_Reminder</th>
                                                 <th style="font-weight:bold;">Name</th>
                                                 <th style="font-weight:bold;">Fee_Balance</th>
+                                                <th style="font-weight:bold;">Status</th>
                                             </tr>
                                         </thead>
                                         <tbody id="myTable"><?php $i=0;foreach($client_view_3 as $value): { ?>
@@ -123,6 +124,7 @@ $fee_remd_count = $client2->count_3;
                                                <td><?php echo $value->fee_rem_date;?></td>
                                                 <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name;?></a></td>
                                                 <td><?php echo $value->balance;?></td>
+                                                <td><font color="#db0e0e"><?php echo $value->status;?></font></td> 
                                             </tr><?php }endforeach;?>
                                         </tbody>
                                     </table> 

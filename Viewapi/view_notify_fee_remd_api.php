@@ -8,13 +8,15 @@ require_once '../dbConfig/config.php';
 $date1 = date('Y-m-d', strtotime("-1 days"));
 $date2 = date('Y-m-d', strtotime("-2 days"));
 $today = date('Y-m-d');
-$sql = "SELECT * FROM client WHERE fee_rem_date = '$date1' OR fee_rem_date = '$today' OR fee_rem_date = '$date2'";
+$date3 = date('Y-m-d', strtotime("+1 days"));
+$date4 = date('Y-m-d', strtotime("+2 days"));
+$sql = "SELECT * FROM client WHERE (fee_rem_date = '$date1' OR fee_rem_date = '$today' OR fee_rem_date = '$date2' OR fee_rem_date = '$date3' OR fee_rem_date = '$date4') AND (status = 'unpaid') ";
 $result = $conn->query($sql);
 $client = array();
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-array_push($client,array('c_ID'=>$row['c_ID'],'c_name'=>$row['c_name'],'gender'=>$row['gender'],'DOB'=>$row['DOB'],'Anniversary'=>$row['Anniversary'],'Age'=>$row['Age'],'address'=>$row['address'],'contact'=>$row['contact'],'fees'=>$row['fees'],'received'=>$row['received'],'discount'=>$row['discount'],'balance'=>$row['balance'],'package'=>$row['package'],'startdate'=>$row['startdate'],'enddate'=>$row['enddate'],'email'=>$row['email'],'Lead_By'=>$row['Lead_By'],'photo'=>$row['photo'],'Comments'=>$row['Comments'],'batch_id'=>$row['batch_id'],'fee_rem_date'=>$row['fee_rem_date']));
+array_push($client,array('c_ID'=>$row['c_ID'],'c_name'=>$row['c_name'],'gender'=>$row['gender'],'DOB'=>$row['DOB'],'Anniversary'=>$row['Anniversary'],'Age'=>$row['Age'],'address'=>$row['address'],'contact'=>$row['contact'],'fees'=>$row['fees'],'received'=>$row['received'],'discount'=>$row['discount'],'balance'=>$row['balance'],'package'=>$row['package'],'startdate'=>$row['startdate'],'enddate'=>$row['enddate'],'email'=>$row['email'],'Lead_By'=>$row['Lead_By'],'photo'=>$row['photo'],'Comments'=>$row['Comments'],'batch_id'=>$row['batch_id'],'fee_rem_date'=>$row['fee_rem_date'],'status'=>$row['status']));
     }
     $client_view = array('client_view'=>$client,'count_3'=>$result->num_rows);
     echo json_encode($client_view);

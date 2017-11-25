@@ -47,6 +47,7 @@ if(isset($_POST['edit_client'])){
         'Discount' => $_POST['Discount'],
         'received' => $_POST['received'],
         'balance' => $_POST['balance'],
+        'status' => $_POST['status'],
         'fee_rem_date' => $_POST['fee_rem_date'],
          'photo' => $photo1
     );
@@ -268,18 +269,30 @@ $packages_view = $packages->packages_view;
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Balance<span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="balance" value="<?php echo $client_view[0]->balance;?>">
                                             </div>
                                         </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-4">
                                               <div class="form-group">
                                                   <label>Fees Reminder Date <span class="required" style="color:red;"> *   </span></label>
                                                   <input type="date" class="form-control border-input "  name="fee_rem_date" value="<?php echo $client_view[0]->fee_rem_date;?>" required>
                                               </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Status<span class="required" style="color:red;"> * </span></label>
+                                                <div>
+                                                    <select  class="form-control student_admission border-input" name="status">
+                                                        <option value="<?php echo $client_view[0]->status;?>"><?php echo $client_view[0]->status;?></option>
+                                                        <option value="unpaid">Unpaid</option>  
+                                                        <option value="paid">Paid</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
                                     </div>
                                     <div class="text-center">
                                         <input type="submit" name="edit_client" class="btn btn-info btn-fill btn-wd">

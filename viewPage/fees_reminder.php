@@ -155,7 +155,7 @@ $client_view_2 = $client1->client_view;
                                                 <th style="font-weight:bold;">Fees Balance</th>
                                                 <th style="font-weight:bold;">Start Date</th>
                                                 <th style="font-weight:bold;">End Date</th>
-                                               
+                                                <th style="font-weight:bold;">Status</th>
                                             </tr>
                                         </thead>
                                         <tbody id="myTable"><?php $i=0;foreach($client_view_2 as $value): { ?>
@@ -170,6 +170,11 @@ $client_view_2 = $client1->client_view;
                                                 <td><?php echo $value->balance;?></td>
                                                 <td><?php echo $value->startdate;?></td>
                                                 <td><?php echo $value->enddate;?></td>
+                                               <?php if($value->status == 'paid'){ ?>
+                                                <td><font color="#4eac07"><?php echo $value->status;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><font color="#db0e0e"><?php echo $value->status;?></font></td> 
+                                                <?php } ?>
                                             </tr><?php }endforeach;?>
                                         </tbody>
                                     </table> 

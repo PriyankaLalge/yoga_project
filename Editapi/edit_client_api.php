@@ -28,6 +28,7 @@ $c_fees = $_POST['c_fees'];
 $Discount = $_POST['Discount'];
 $received = $_POST['received'];
 $balance = $_POST['balance'];
+$status = $_POST['status'];
 $fee_rem_date = $_POST['fee_rem_date'];
  $photo = $_POST['photo'];
     if(empty($photo['name'])){
@@ -41,7 +42,7 @@ $fee_rem_date = $_POST['fee_rem_date'];
         file_put_contents("../assets/client_image/$c_id.$extension[1]",$name);
     }
     
-    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='$c_address',`contact`='$c_contact',`fees`='$c_fees',`received`='$received',`discount`='$Discount',`balance`='$balance',`package`='$package',`startdate`='$startdate',`enddate`='$enddate',`email`='$email',`Lead_By`='$Lead_By',`photo`='$pro_url',`Comments`='$Comments',`batch_id`='$batch',`fee_rem_date`='$fee_rem_date' WHERE `c_ID`='$c_id'";
+    $sql = "UPDATE `client` SET `c_name`='$c_name',`gender`='$gender',`DOB`='$DOB',`Anniversary`='$Anniversary',`Age`='$Age',`address`='$c_address',`contact`='$c_contact',`fees`='$c_fees',`received`='$received',`discount`='$Discount',`balance`='$balance',`package`='$package',`startdate`='$startdate',`enddate`='$enddate',`email`='$email',`Lead_By`='$Lead_By',`photo`='$pro_url',`Comments`='$Comments',`batch_id`='$batch',`fee_rem_date`='$fee_rem_date',`status`='$status' WHERE `c_ID`='$c_id'";
      
     if ($conn->query($sql) === TRUE)
         { 

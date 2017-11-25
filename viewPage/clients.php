@@ -137,7 +137,11 @@ $client_view = $client->client_view;
                                                 <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name; ?></a></td>
                                                 <td><?php echo $value->contact; ?></td>
                                                 <td><?php echo $value1->batch_name; ?></td>
-                                                <td>Waiting</td>
+                                                <?php if($value->status == 'paid'){ ?>
+                                                <td><font color="#4eac07"><?php echo $value->status;?></font></td>
+                                                <?php }else{ ?>
+                                                <td><font color="#db0e0e"><?php echo $value->status;?></font></td> 
+                                                <?php } ?>
                                                 <td><a href="edit_client_profile.php?c_id=<?php echo $value->c_ID; ?>"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
                                             </tr><?php }endforeach;?><?php endforeach;?>
 

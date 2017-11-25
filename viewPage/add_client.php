@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
          'Discount' => $_POST['Discount'],
          'received' => $_POST['received'],
          'balance' => $_POST['balance'],
+         'status' => $_POST['status'],
          'fee_rem_date' => $_POST['fee_rem_date'],
          'photo' => $_FILES['cpro_img']
 
@@ -258,17 +259,28 @@ $packages_view = $packages->packages_view;
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Balance<span class="required" style="color:red;"> * </span></label>
                                         <input type="text" id="balance" onfocus="calc_balance()" class="form-control border-input phoneInput" placeholder="Contact No." name="balance" >
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Fees Reminder Date <span class="required" style="color:red;"> *   </span></label>
                                     <input type="date" class="form-control border-input "  name="fee_rem_date" required>
                                    </div>
+                                </div> 
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Status<span class="required" style="color:red;"> * </span></label>
+                                    <div>
+                                        <select  class="form-control student_admission border-input" name="status">
+                                            <option value="unpaid">Unpiad</option>
+                                           <option value="paid">Paid</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="text-center">
