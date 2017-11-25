@@ -7,30 +7,6 @@
             <div class="container-fluid">
                 
                 <div class="row">
-                     <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content" >
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                          <i class="fa fa-user" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                          <a href="employee.php"><p>Employee</p></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                         <a href="employee_profile.php"><i class="fa fa-plus" aria-hidden="true"></i>Employee Profile</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                              <div class="content">
@@ -103,10 +79,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="row">
-                 <div class="col-lg-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
                                 <div class="row">
@@ -131,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-               
+                
                 <div class="row card_style">
                        <div class="card">
                         <div class="col-1">
@@ -198,7 +171,7 @@ input[id=teachersearch] {
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
-    background-image: url('assets/img/search.png');
+    background-image: url('../assets/img/search.png');
     background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;

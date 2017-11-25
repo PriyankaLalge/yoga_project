@@ -47,6 +47,7 @@ if(isset($_POST['edit_client'])){
         'Discount' => $_POST['Discount'],
         'received' => $_POST['received'],
         'balance' => $_POST['balance'],
+        'fee_rem_date' => $_POST['fee_rem_date'],
          'photo' => $photo1
     );
     # Create a connection
@@ -247,31 +248,37 @@ $packages_view = $packages->packages_view;
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input phoneInput" placeholder="name" name="c_fees" value="<?php echo $client_view[0]->fees;?>">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Discount<span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="Discount" value="<?php echo $client_view[0]->discount;?>">
+                                            </div>
+                                        </div>
+                                          <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Recieved<span class="required" style="color:red;"> * </span></label>
+                                                <input type="text" class="form-control border-input phoneInput" placeholder="name" name="received" value="<?php echo $client_view[0]->received;?>">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Recieved<span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input phoneInput" placeholder="name" name="received" value="<?php echo $client_view[0]->received;?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
                                                 <label>Balance<span class="required" style="color:red;"> * </span></label>
                                                 <input type="text" class="form-control border-input phoneInput" placeholder="Contact No." name="balance" value="<?php echo $client_view[0]->balance;?>">
                                             </div>
+                                        </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label>Fees Reminder Date <span class="required" style="color:red;"> *   </span></label>
+                                                  <input type="date" class="form-control border-input "  name="fee_rem_date" value="<?php echo $client_view[0]->fee_rem_date;?>" required>
+                                              </div>
                                         </div>
                                     </div>
                                     <div class="text-center">

@@ -1,12 +1,20 @@
-
+<?php  
+# Create a connection
+$ch = curl_init();
+curl_setopt( $ch, CURLOPT_URL, 'http://localhost/yoga_project/Viewapi/view_fee_remd_api.php');
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+# Get the response
+$content1 = curl_exec($ch);
+$client1 = json_decode($content1);
+$client_view_2 = $client1->client_view;
+ // print_r($client_view);
+?>	   
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=9;require_once 'sidebar.php'; ?>
 <?php $nav=9;require_once 'nav.php'; ?>
-
         <div class="content">
             <div class="container-fluid">
-                
                 <div class="row">
                      <div class="col-lg-3 col-sm-6">
                         <div class="card">
@@ -138,6 +146,7 @@
                                         <thead>
                                             <tr style="font-weight:bold;" class="header font_tr">
                                                 <th style="font-weight:bold;">Sr No.</th>
+                                                 <th style="font-weight:bold;">Fee Reminder</th>
                                                 <th style="font-weight:bold;">Name</th>
                                                 <th style="font-weight:bold;">Email</th> 
                                                 <th style="font-weight:bold;">Mobile</th> 
@@ -149,18 +158,19 @@
                                                
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable">
+                                        <tbody id="myTable"><?php $i=0;foreach($client_view_2 as $value): { ?>
                                             <tr>
-                                               <td>1</td>
-                                                <td><a href="">priyanka</a></td>
-                                                <td>lalge@gmail.com</td>
-                                                <td>monthly</td> 
-                                                <td>364567575</td>
-                                                <td>364</td>
-                                                <td>365</td>
-                                                <td>11-11-17</td>
-                                                <td>17-4-29</td>
-                                            </tr>
+                                               <td><?php $i++; echo $i;?></td>
+                                               <td><?php echo $value->fee_rem_date;?></td>
+                                                <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_name;?></a></td>
+                                                <td><?php echo $value->email;?></td>
+                                                <td><?php echo $value->contact;?></td> 
+                                                <td><?php echo $value->package;?></td>
+                                                <td><?php echo $value->received;?></td>
+                                                <td><?php echo $value->balance;?></td>
+                                                <td><?php echo $value->startdate;?></td>
+                                                <td><?php echo $value->enddate;?></td>
+                                            </tr><?php }endforeach;?>
                                         </tbody>
                                     </table> 
                                 </div>                          
