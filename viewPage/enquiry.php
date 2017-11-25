@@ -88,7 +88,7 @@ $enquiry_view = $enquiry->enquiry_view;
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>FollowUp Time <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name="followTime" value="" required >
+                                    <input type="time" class="form-control border-input UserName_field" name="followTime" value="" required >
                                 </div>
                             </div>
                             </div> 
@@ -153,9 +153,9 @@ $enquiry_view = $enquiry->enquiry_view;
                                                 <th style="font-weight:bold;">Name</th>
                                                 <th style="font-weight:bold;">Email</th> 
                                                 <th style="font-weight:bold;">Mobile</th> 
-                                                <th style="font-weight:bold;">Enquiry</th>
-                                                <th style="font-weight:bold;">FollowUp</th>
-                                                <th style="font-weight:bold;">F</th>
+                                                <th style="font-weight:bold;">Enquiry Date</th>
+                                                <th style="font-weight:bold;">FollowUp Date</th>
+                                                <th style="font-weight:bold;">FOllowUp Time</th>
                                                 <th style="font-weight:bold;">Refer</th>
                                                 <th style="font-weight:bold;">Comment</th>
                                                

@@ -115,12 +115,14 @@ $client_attend = json_decode($content);
                                         <td><a href="client_profile.php?c_id=<?php echo $value->c_ID; ?>"><?php echo $value->c_ID; ?></a></td>
                                         <input type="hidden" name="client_id[]" value="<?php echo $value->c_ID; ?>">
                                         <td><?php echo $value->c_name; ?></td>
-                                        <td>
-                                            
+                                        <td><?php if(isset($_POST['out_time'])){?>
+                                            <?php echo '<input type="text" id="present" onfocus="attend()" name="attendance[]" value="1">';}
+                                            else{?>
+                                            <?php echo '<input type="text" id="absent" name="attendance[]" value="0">'; }?>
                                         </td>
                                         <td><?php echo $value->package; ?></td>
-                                        <td><input type="time" name="in_time[]" value="00:00"/></td> 
-                                        <td><input type="time" name="out_time[]" value="00:00"/></td>
+                                        <td><input type="time" in="in" name="in_time[]" value="00:00"/></td> 
+                                        <td><input type="time" id="out"  name="out_time[]" value="00:00"/></td>
                                     </tr><?php endforeach; ?>
                                 </tbody>
                             </table>
