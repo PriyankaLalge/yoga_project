@@ -1,4 +1,3 @@
-
 <?php  
 # Create a connection
 $ch = curl_init();

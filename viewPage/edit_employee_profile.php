@@ -69,10 +69,6 @@ if(isset($_POST['edit_emp'])){
     curl_close($ch);  
 }
 ?>
-
-
-
-
 <?php require_once 'header.php'; ?>
 <?php require_once 'custome_style.php'; ?>
 <?php $page=2;require_once 'sidebar.php'; ?>
